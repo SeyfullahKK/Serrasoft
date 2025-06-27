@@ -6,8 +6,9 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/Serrasoft' : '',
+  // GitHub Pages için basePath ve assetPrefix
   basePath: process.env.NODE_ENV === 'production' ? '/Serrasoft' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/Serrasoft/' : '',
 }
 
 module.exports = nextConfig 
