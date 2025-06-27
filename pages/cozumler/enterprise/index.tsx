@@ -480,8 +480,6 @@ export default function EnterprisePage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   )
 } 

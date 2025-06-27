@@ -308,8 +308,6 @@ export default function UrunlerPage() {
           </div>
         </section>
       </main>
-
-      <Footer />
     </>
   )
 } 
