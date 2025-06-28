@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <Head>
         <title>Serrasoft - Teknolojide Yenilikçi Çözümler</title>
-        <meta name="description" content="Serrasoft olarak, işletmenizi geleceğe taşıyacak yenilikçi yazılım çözümleri sunuyoruz. Web geliştirme, mobil uygulama, e-ticaret ve daha fazlası." />
+        <meta name="description" content="Ağ güvenliği, büyük veri analizi ve derinlemesine paket inceleme alanlarında uzmanlaşmış çözümlerle telekomünikasyon ve kurumsal sektörlere hizmet veriyoruz. Modern teknolojilerle işletmenizin dijital altyapısını güçlendiriyoruz." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
