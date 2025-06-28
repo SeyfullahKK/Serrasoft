@@ -136,28 +136,23 @@ const LowLatencySystemsPage = () => {
               Ultra-düşük gecikme sistemleri ve high-frequency trading teknolojileri 
               ile kritik timing requirements'ı nanosecond precision ile karşılıyoruz.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button
+            <div className="flex justify-start">
+              <motion.a
+                href="#performance-metrics"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-orange-600 px-8 py-4 rounded-full font-medium hover:shadow-xl transition-all"
+                style={{ scrollMarginTop: '100px' }}
               >
-                Latency Optimization
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="glass-effect px-8 py-4 rounded-full font-medium hover:shadow-lg transition-all border border-white/20"
-              >
-                Performance Benchmark
-              </motion.button>
+                Keşfet
+              </motion.a>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Performance Metrics */}
-      <section className="py-20 bg-white">
+      <section id="performance-metrics" className="py-20 bg-white" style={{ scrollMarginTop: '100px' }}>
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -388,16 +383,9 @@ const LowLatencySystemsPage = () => {
             <h2 className="text-4xl font-bold mb-6">
               Microsecond Matters in Your Business?
             </h2>
-            <p className="text-xl mb-8 opacity-90">
+            <p className="text-xl opacity-90">
               Ultra-low latency ihtiyaçlarınızı nanosecond precision ile çözelim
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-orange-600 px-8 py-4 rounded-full font-medium hover:shadow-xl transition-all"
-            >
-              Latency Assessment
-            </motion.button>
           </motion.div>
         </div>
       </section>

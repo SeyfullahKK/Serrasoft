@@ -123,12 +123,12 @@ const issSolutions = [
 ]
 
 const subSolutions = [
-  { name: 'Akıllı Trafik Kayıt Sistemi', href: '/cozumler/internet-servis-saglayicilari/loglama-zeronet', icon: Activity },
-  { name: 'Gelişmiş VPN Koruma Sistemi', href: '/cozumler/internet-servis-saglayicilari/vpn-zeronet', icon: Lock },
-  { name: 'Kapsamlı İnternet Güvenlik', href: '/cozumler/internet-servis-saglayicilari/guvenli-internet-zeronet', icon: Shield },
-  { name: 'Uygulama Tanıma', href: '/cozumler/internet-servis-saglayicilari/uygulama-tanima-zeronet', icon: Eye },
-  { name: 'Akıllı Olay Korelasyon Motoru', href: '/cozumler/internet-servis-saglayicilari/korelasyon-zeronet', icon: Network },
-  { name: 'Yüksek Performanslı Paket İnceleme', href: '/cozumler/internet-servis-saglayicilari/dpi-zeronet', icon: Monitor },
+  { name: 'Akıllı Trafik Kayıt Sistemi', href: '#loglama-zeronet', icon: Activity },
+  { name: 'Gelişmiş VPN Koruma Sistemi', href: '#vpn-zeronet', icon: Lock },
+  { name: 'Kapsamlı İnternet Güvenlik', href: '#guvenli-internet-zeronet', icon: Shield },
+  { name: 'Uygulama Tanıma', href: '#uygulama-tanima-zeronet', icon: Eye },
+  { name: 'Akıllı Olay Korelasyon Motoru', href: '#korelasyon-zeronet', icon: Network },
+  { name: 'Yüksek Performanslı Paket İnceleme', href: '#dpi-zeronet', icon: Monitor },
 ]
 
 export default function ISSPage() {
@@ -166,21 +166,15 @@ export default function ISSPage() {
                 optimize edin, güvenliği artırın ve müşterilerinize daha iyi hizmet sunun.
               </p>
               
-              <div className="flex flex-wrap gap-4">
-                <motion.button
+              <div className="flex justify-start">
+                <motion.a
+                  href="#iss-solutions"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-purple-700 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all"
+                  className="bg-white text-purple-700 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all cursor-pointer"
                 >
-                  Demo Talep Et
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-purple-700 transition-all"
-                >
-                  ZeroNet Katalog
-                </motion.button>
+                  Keşfet
+                </motion.a>
               </div>
             </motion.div>
           </div>
@@ -194,7 +188,7 @@ export default function ISSPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-2xl font-semibold mb-6">ZeroNet Çözümleri</h2>
+              <h2 className="text-2xl font-semibold mb-6">ZengiNet Çözümleri</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
                 {subSolutions.map((solution, index) => (
                   <motion.div
@@ -203,18 +197,17 @@ export default function ISSPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                   >
-                    <Link href={solution.href}>
-                      <motion.div
-                        whileHover={{ y: -5 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="glass-effect rounded-xl p-4 text-center hover:shadow-lg transition-all cursor-pointer group"
-                      >
-                        <solution.icon className="w-8 h-8 mx-auto mb-2 text-purple-600 group-hover:scale-110 transition-transform" />
-                        <p className="text-sm font-medium text-gray-700 group-hover:text-purple-600 transition-colors">
-                          {solution.name}
-                        </p>
-                      </motion.div>
-                    </Link>
+                    <motion.a
+                      href={solution.href}
+                      whileHover={{ y: -5 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="block glass-effect rounded-xl p-4 text-center hover:shadow-lg transition-all cursor-pointer group"
+                    >
+                      <solution.icon className="w-8 h-8 mx-auto mb-2 text-purple-600 group-hover:scale-110 transition-transform" />
+                      <p className="text-sm font-medium text-gray-700 group-hover:text-purple-600 transition-colors">
+                        {solution.name}
+                      </p>
+                    </motion.a>
                   </motion.div>
                 ))}
               </div>
@@ -278,7 +271,7 @@ export default function ISSPage() {
         </section>
 
         {/* Solutions Detail */}
-        <section className="py-20 bg-gray-50">
+        <section id="iss-solutions" className="py-20 bg-gray-50">
           <div className="container mx-auto px-6">
             <div className="space-y-20">
               {issSolutions.map((solution, index) => (
@@ -293,7 +286,7 @@ export default function ISSPage() {
                   }`}
                 >
                   <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                    <div className="flex items-center gap-4 mb-6">
+                    <div id={solution.id} className="flex items-center gap-4 mb-6" style={{ scrollMarginTop: '100px' }}>
                       <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center">
                         <solution.icon className="w-8 h-8 text-white" />
                       </div>
@@ -320,17 +313,6 @@ export default function ISSPage() {
                         ))}
                       </div>
                     </div>
-                    
-                    <Link href={`/cozumler/internet-servis-saglayicilari/${solution.id}`}>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 text-purple-600 font-semibold hover:gap-4 transition-all"
-                      >
-                        Detaylı Bilgi
-                        <ArrowRight className="w-5 h-5" />
-                      </motion.button>
-                    </Link>
                   </div>
                   
                   <div className={`glass-effect rounded-2xl p-8 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
@@ -367,16 +349,9 @@ export default function ISSPage() {
                 ISS Altyapınızı Güçlendirin
               </h2>
               <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                ZeroNet çözümleri ile ağınızı optimize edin, güvenliği artırın ve 
+                ZengiNet çözümleri ile ağınızı optimize edin, güvenliği artırın ve 
                 müşteri memnuniyetini yükseltin.
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-purple-700 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all"
-              >
-                Ücretsiz Analiz Talep Edin
-              </motion.button>
             </motion.div>
           </div>
         </section>

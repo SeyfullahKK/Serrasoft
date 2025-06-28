@@ -125,28 +125,23 @@ const DistributedSystemsPage = () => {
               Ölçeklenebilir mikroservis mimarileri ve distributed computing platformları 
               ile modern uygulamaların kompleks ihtiyaçlarını karşılıyoruz.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button
+            <div className="flex justify-start">
+              <motion.a
+                href="#technologies"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="bg-white text-purple-600 px-8 py-4 rounded-full font-medium hover:shadow-xl transition-all"
+                style={{ scrollMarginTop: '100px' }}
               >
-                Microservices Architecture
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="glass-effect px-8 py-4 rounded-full font-medium hover:shadow-lg transition-all border border-white/20"
-              >
-                Sistem Mimarisi Demo
-              </motion.button>
+                Keşfet
+              </motion.a>
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* Technologies Section */}
-      <section className="py-20">
+      <section id="technologies" className="py-20" style={{ scrollMarginTop: '100px' }}>
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -276,16 +271,9 @@ const DistributedSystemsPage = () => {
             <h2 className="text-4xl font-bold mb-6">
               Microservices Mimarisine Geçin
             </h2>
-            <p className="text-xl mb-8 opacity-90">
+            <p className="text-xl opacity-90">
               Monolitik uygulamanızı modern microservices architecture'a dönüştürelim
             </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-purple-600 px-8 py-4 rounded-full font-medium hover:shadow-xl transition-all"
-            >
-              Architecture Assessment
-            </motion.button>
           </motion.div>
         </div>
       </section>

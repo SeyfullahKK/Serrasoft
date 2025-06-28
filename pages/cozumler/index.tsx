@@ -140,16 +140,9 @@ export default function CozumlerPage() {
               <h2 className="text-4xl font-bold text-white mb-6">
                 İşletmeniz için En Uygun Çözümü Bulalım
               </h2>
-              <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-white/90 max-w-2xl mx-auto">
                 Uzman ekibimiz, ihtiyaçlarınızı analiz edip size özel çözümler sunmak için hazır.
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-serrasoft-primary px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all"
-              >
-                Ücretsiz Danışmanlık Al
-              </motion.button>
             </motion.div>
           </div>
         </section>

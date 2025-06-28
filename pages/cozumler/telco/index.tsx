@@ -72,9 +72,9 @@ const telcoSolutions = [
 ]
 
 const subSolutions = [
-  { name: 'Korelasyon', href: '/cozumler/telco/korelasyon', icon: Network },
-  { name: 'Loglama', href: '/cozumler/telco/loglama', icon: Activity },
-  { name: 'Uygulama Tanıma', href: '/cozumler/telco/uygulama-tanima', icon: Eye }
+  { name: 'Korelasyon', href: '#korelasyon', icon: Network },
+  { name: 'Loglama', href: '#loglama', icon: Activity },
+  { name: 'Uygulama Tanıma', href: '#uygulama-tanima', icon: Eye }
 ]
 
 export default function TelcoSolutionsPage() {
@@ -112,21 +112,15 @@ export default function TelcoSolutionsPage() {
                 uygulama tanıma çözümleri ile ağınızı daha akıllı ve verimli hale getirin.
               </p>
               
-              <div className="flex flex-wrap gap-4">
-                <motion.button
+              <div className="flex justify-start">
+                <motion.a
+                  href="#telco-solutions"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-blue-700 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all"
+                  className="bg-white text-blue-700 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all cursor-pointer"
                 >
-                  Demo Talep Et
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-700 transition-all"
-                >
-                  Teknik Döküman
-                </motion.button>
+                  Keşfet
+                </motion.a>
               </div>
             </motion.div>
           </div>
@@ -149,20 +143,19 @@ export default function TelcoSolutionsPage() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.4, delay: index * 0.1 }}
                   >
-                    <Link href={solution.href}>
-                      <motion.div
-                        whileHover={{ y: -5, scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="glass-effect rounded-xl p-6 text-center hover:shadow-xl transition-all cursor-pointer group"
-                      >
-                        <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                          <solution.icon className="w-8 h-8 text-white" />
-                        </div>
-                        <p className="text-lg font-semibold text-gray-800 group-hover:text-serrasoft-primary transition-colors">
-                          {solution.name}
-                        </p>
-                      </motion.div>
-                    </Link>
+                    <motion.a
+                      href={solution.href}
+                      whileHover={{ y: -5, scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      className="block glass-effect rounded-xl p-6 text-center hover:shadow-xl transition-all cursor-pointer group"
+                    >
+                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                        <solution.icon className="w-8 h-8 text-white" />
+                      </div>
+                      <p className="text-lg font-semibold text-gray-800 group-hover:text-serrasoft-primary transition-colors">
+                        {solution.name}
+                      </p>
+                    </motion.a>
                   </motion.div>
                 ))}
               </div>
@@ -171,7 +164,7 @@ export default function TelcoSolutionsPage() {
         </section>
 
         {/* Solutions Detail */}
-        <section className="py-20">
+        <section id="telco-solutions" className="py-20">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -201,7 +194,7 @@ export default function TelcoSolutionsPage() {
                   }`}
                 >
                   <div className={index % 2 === 1 ? 'md:order-2' : ''}>
-                    <div className="flex items-center gap-4 mb-6">
+                    <div id={solution.id} className="flex items-center gap-4 mb-6" style={{ scrollMarginTop: '100px' }}>
                       <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl flex items-center justify-center">
                         <solution.icon className="w-8 h-8 text-white" />
                       </div>
@@ -228,17 +221,6 @@ export default function TelcoSolutionsPage() {
                         ))}
                       </div>
                     </div>
-                    
-                    <Link href={`/cozumler/telco/${solution.id}`}>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 text-serrasoft-primary font-semibold hover:gap-4 transition-all"
-                      >
-                        Detaylı Bilgi
-                        <ArrowRight className="w-5 h-5" />
-                      </motion.button>
-                    </Link>
                   </div>
                   
                   <div className={`glass-effect rounded-2xl p-8 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
@@ -262,41 +244,8 @@ export default function TelcoSolutionsPage() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center text-white"
-            >
-              <h2 className="text-4xl font-bold mb-12">Rakamlarla Başarılarımız</h2>
-              <div className="grid md:grid-cols-4 gap-8">
-                {[
-                  { value: '15+', label: 'Telco Müşteri' },
-                  { value: '10M+', label: 'Günlük İşlem' },
-                  { value: '%99.99', label: 'Uptime' },
-                  { value: '24/7', label: 'Destek' }
-                ].map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                  >
-                    <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                    <div className="text-blue-200">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
         {/* CTA Section */}
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800">
           <div className="container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -304,29 +253,13 @@ export default function TelcoSolutionsPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-4xl font-bold mb-6">
+              <h2 className="text-4xl font-bold text-white mb-6">
                 Telekom Altyapınızı Güçlendirin
               </h2>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
                 Korelasyon, loglama ve uygulama tanıma çözümlerimiz ile 
                 ağınızı daha akıllı ve verimli hale getirin.
               </p>
-              <div className="flex justify-center gap-4">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-gradient-to-r from-serrasoft-primary to-serrasoft-secondary text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all"
-                >
-                  Hemen İletişime Geçin
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-white text-serrasoft-primary border-2 border-serrasoft-primary px-8 py-4 rounded-full font-semibold hover:bg-gray-50 transition-all"
-                >
-                  Örnek Vaka İncele
-                </motion.button>
-              </div>
             </motion.div>
           </div>
         </section>
