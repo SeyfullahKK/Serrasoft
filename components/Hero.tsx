@@ -43,55 +43,25 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 bg-blue-100 text-serrasoft-primary px-4 py-2 rounded-full mb-6"
+              className="inline-flex items-center gap-2 bg-blue-100 text-serrasoft-primary px-4 py-2 rounded-full mb-4"
             >
               <Zap className="w-4 h-4" />
               <span className="text-sm font-medium">Geleceğin Teknolojileri</span>
             </motion.div>
 
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-gray-900">Dijital Dönüşümde</span>
+            <h1 className="text-5xl md:text-6xl font-bold mb-3">
+              <span className="text-gray-900">Teknolojide</span>
               <br />
-              <span className="gradient-text">Güvenilir Partner</span>
+              <span className="gradient-text">Yenilikçi Çözümler</span>
             </h1>
 
-            <p className="text-xl text-gray-600 mb-8">
-              Serrasoft olarak, işletmenizi geleceğe taşıyacak yenilikçi yazılım çözümleri sunuyoruz. 
-              Modern teknolojiler ve uzman ekibimizle dijital dönüşüm yolculuğunuzda yanınızdayız.
+            <p className="text-xl text-gray-600 mb-4">
+              Ağ güvenliği, büyük veri analizi ve derinlemesine paket inceleme alanlarında 
+              uzmanlaşmış çözümlerle telekomünikasyon ve kurumsal sektörlere hizmet veriyoruz. 
+              Modern teknolojilerle işletmenizin dijital altyapısını güçlendiriyoruz.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group bg-gradient-to-r from-serrasoft-primary to-serrasoft-secondary text-white px-8 py-4 rounded-full font-medium hover:shadow-xl transition-all flex items-center justify-center gap-2"
-              >
-                Hemen Başlayın
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="glass-effect px-8 py-4 rounded-full font-medium hover:shadow-lg transition-all border border-gray-200"
-              >
-                Demo İsteyin
-              </motion.button>
-            </div>
 
-            <div className="mt-12 flex items-center gap-8">
-              <div className="flex items-center gap-2">
-                <Shield className="w-5 h-5 text-green-500" />
-                <span className="text-sm text-gray-600">%100 Güvenli</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Zap className="w-5 h-5 text-yellow-500" />
-                <span className="text-sm text-gray-600">Hızlı Teslimat</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Code2 className="w-5 h-5 text-blue-500" />
-                <span className="text-sm text-gray-600">Modern Teknoloji</span>
-              </div>
-            </div>
           </motion.div>
 
           <motion.div
@@ -116,14 +86,14 @@ const Hero = () => {
                   repeat: Infinity,
                   delay: 0
                 }}
-                className="absolute top-0 left-0 w-56 h-36 glass-effect rounded-2xl p-5 shadow-xl z-10 bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-white/50"
+                className="absolute top-0 left-0 w-64 h-40 glass-effect rounded-2xl p-4 shadow-xl z-10 bg-gradient-to-br from-white/95 to-white/80 backdrop-blur-lg border border-white/60"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <Network className="w-7 h-7 text-orange-500" />
+                  <Network className="w-6 h-6 text-orange-500" />
                   <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                 </div>
-                <h3 className="font-semibold text-gray-800 mb-1">Telco Solutions</h3>
-                <p className="text-xs text-gray-600">5G Network Infrastructure</p>
+                <h3 className="font-semibold text-gray-800 mb-1">Networking Solutions</h3>
+                <p className="text-xs text-gray-600">Modern Ağ Altyapıları</p>
               </motion.div>
 
               {/* Sağ üst kart */}
@@ -140,14 +110,14 @@ const Hero = () => {
                   repeat: Infinity,
                   delay: 0.5
                 }}
-                className="absolute top-12 right-0 w-56 h-36 glass-effect rounded-2xl p-5 shadow-xl z-20 bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-white/50"
+                className="absolute top-0 right-0 w-64 h-40 glass-effect rounded-2xl p-4 shadow-xl z-20 bg-gradient-to-br from-white/95 to-white/80 backdrop-blur-lg border border-white/60"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <Database className="w-7 h-7 text-blue-500" />
+                  <Database className="w-6 h-6 text-blue-500" />
                   <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                 </div>
-                <h3 className="font-semibold text-gray-800 mb-1">High Performance</h3>
-                <p className="text-xs text-gray-600">Distributed Computing</p>
+                <h3 className="font-semibold text-gray-800 mb-1">Distributed Systems</h3>
+                <p className="text-xs text-gray-600">Dağıtık Sistem Mimarileri</p>
               </motion.div>
 
               {/* Orta ana kart */}
@@ -164,18 +134,18 @@ const Hero = () => {
                   repeat: Infinity,
                   delay: 1
                 }}
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-44 glass-effect rounded-2xl p-6 shadow-2xl z-30 bg-gradient-to-br from-white/95 to-white/80 backdrop-blur-lg border border-white/60"
+                className="absolute top-1/3 left-1/3 transform -translate-x-1/2 -translate-y-1/2 w-72 h-44 glass-effect rounded-2xl p-5 shadow-2xl z-30 bg-gradient-to-br from-white/95 to-white/80 backdrop-blur-lg border border-white/60"
               >
                 <div className="flex items-center justify-between mb-3">
-                  <Shield className="w-8 h-8 text-green-500" />
+                  <Shield className="w-7 h-7 text-green-500" />
                   <div className="flex gap-1">
                     <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                     <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" style={{animationDelay: '0.2s'}}></div>
                     <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse" style={{animationDelay: '0.4s'}}></div>
                   </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">Enterprise Security</h3>
-                <p className="text-sm text-gray-600">Next-gen cybersecurity solutions for modern businesses</p>
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">High Performance Computing</h3>
+                <p className="text-sm text-gray-600">Yüksek Performans Hesaplama</p>
               </motion.div>
 
               {/* Sol alt kart */}
@@ -192,14 +162,14 @@ const Hero = () => {
                   repeat: Infinity,
                   delay: 1.5
                 }}
-                className="absolute bottom-12 left-4 w-56 h-36 glass-effect rounded-2xl p-5 shadow-xl z-10 bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-white/50"
+                className="absolute bottom-0 left-0 w-64 h-40 glass-effect rounded-2xl p-4 shadow-xl z-10 bg-gradient-to-br from-white/95 to-white/80 backdrop-blur-lg border border-white/60"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <Zap className="w-7 h-7 text-yellow-500" />
+                  <Zap className="w-6 h-6 text-yellow-500" />
                   <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
                 </div>
-                <h3 className="font-semibold text-gray-800 mb-1">Real-Time Systems</h3>
-                <p className="text-xs text-gray-600">Ultra-low latency processing</p>
+                <h3 className="font-semibold text-gray-800 mb-1">Real-time Systems</h3>
+                <p className="text-xs text-gray-600">Gerçek Zamanlı Sistemler</p>
               </motion.div>
 
               {/* Sağ alt kart */}
@@ -216,14 +186,14 @@ const Hero = () => {
                   repeat: Infinity,
                   delay: 2
                 }}
-                className="absolute bottom-0 right-4 w-56 h-36 glass-effect rounded-2xl p-5 shadow-xl z-10 bg-gradient-to-br from-white/90 to-white/70 backdrop-blur-lg border border-white/50"
+                className="absolute bottom-0 right-0 w-64 h-40 glass-effect rounded-2xl p-4 shadow-xl z-10 bg-gradient-to-br from-white/95 to-white/80 backdrop-blur-lg border border-white/60"
               >
                 <div className="flex items-center justify-between mb-2">
-                  <Globe className="w-7 h-7 text-purple-500" />
+                  <Globe className="w-6 h-6 text-purple-500" />
                   <div className="w-2 h-2 bg-purple-400 rounded-full animate-pulse"></div>
                 </div>
-                <h3 className="font-semibold text-gray-800 mb-1">ISP Solutions</h3>
-                <p className="text-xs text-gray-600">ZeroNet series products</p>
+                <h3 className="font-semibold text-gray-800 mb-1">Low Latency Systems</h3>
+                <p className="text-xs text-gray-600">Ultra Düşük Gecikme</p>
               </motion.div>
             </div>
           </motion.div>

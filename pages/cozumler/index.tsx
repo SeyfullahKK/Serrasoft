@@ -12,26 +12,26 @@ const solutions = [
     icon: Server,
     color: 'from-blue-500 to-blue-700',
     features: [
-      'Konteynerleme Teknolojileri',
-      'Gelişmiş Loglama Sistemleri',
-      'Uygulama Tanıma ve DPI',
-      'VPN Filtreleme Çözümleri',
-      'Güvenlik İnternet Hizmetleri',
+      'Korelasyon',
+      'Loglama',
+      'Uygulama Tanıma',
+      
     ],
     href: '/cozumler/telco'
   },
   {
     id: 'iss',
     title: 'İnternet Servis Sağlayıcıları',
-    description: 'ISS\'ler için özel tasarlanmış, yüksek trafikli ağları yönetebilen güçlü çözümler',
+    description: 'İSS\'ler için özel tasarlanmış, yüksek trafikli ağları yönetebilen güçlü çözümler',
     icon: Globe,
     color: 'from-purple-500 to-purple-700',
     features: [
-      'ZeroNet Loglama Çözümleri',
-      'Uygulama Tanıma Sistemleri',
-      'VPN Yönetim Araçları',
-      'Güvenli İnternet Altyapısı',
-      'DPI Teknolojileri',
+      'Akıllı Trafik Kayıt Sistemi',
+      'Gelişmiş VPN Koruma Sistemi',
+      'Kapsamlı İnternet Güvenlik',
+      'Uygulama Tanıma',
+      'Akıllı Olay Korelasyon Motoru',
+      'Yüksek Performanslı Paket İnceleme',
     ],
     href: '/cozumler/internet-servis-saglayicilari'
   },
@@ -42,11 +42,7 @@ const solutions = [
     icon: Building2,
     color: 'from-green-500 to-green-700',
     features: [
-      'Kurumsal Ağ Yönetimi',
-      'Bulut Altyapı Çözümleri',
-      'Siber Güvenlik Sistemleri',
-      'Veri Merkezi Çözümleri',
-      'İş Sürekliliği Yönetimi',
+      'Size uygun çözümler için iletişime geçin!',
     ],
     href: '/cozumler/enterprise'
   }

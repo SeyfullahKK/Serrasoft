@@ -20,8 +20,8 @@ import {
 const issSolutions = [
   {
     id: 'loglama-zeronet',
-    title: 'Loglama: ZeroNet',
-    description: 'İSS altyapıları için optimize edilmiş, yüksek hacimli trafik loglama çözümü',
+    title: 'Akıllı Trafik Kayıt Sistemi',
+    description: 'ISS altyapınızın tüm ağ trafiğini gerçek zamanlı olarak izleyin ve kaydedin. Petabyte seviyesinde veriyi analiz ederek müşteri davranışlarını anlayın, şüpheli aktiviteleri tespit edin ve yasal zorunluluklara tam uyum sağlayın. Yüksek performanslı depolama ve hızlı sorgulama yetenekleri ile operasyonel verimliliğinizi artırın.',
     icon: Activity,
     features: [
       'Saniyede 10M+ log kaydı',
@@ -36,26 +36,9 @@ const issSolutions = [
     ]
   },
   {
-    id: 'uygulama-tanima-zeronet',
-    title: 'Uygulama Tanıma: ZeroNet',
-    description: 'Gelişmiş DPI teknolojisi ile ISS trafiğinde uygulama tanıma ve sınıflandırma',
-    icon: Eye,
-    features: [
-      '5000+ uygulama desteği',
-      'Encrypted traffic analysis',
-      'Behavior-based detection',
-      'Custom signature creation'
-    ],
-    benefits: [
-      '%99.9 doğruluk oranı',
-      'Bandgenişlik optimizasyonu',
-      'QoS politika desteği'
-    ]
-  },
-  {
     id: 'vpn-zeronet',
-    title: 'VPN: ZeroNet',
-    description: 'ISS\'ler için VPN trafiği tespit ve yönetim çözümleri',
+    title: 'Gelişmiş VPN Koruma Sistemi',
+    description: 'Ağınızdaki VPN trafiğini akıllı algoritmalarla tespit edin ve yönetin. Tüm VPN protokollerini tanıyarak gizlenmiş trafiği ortaya çıkarın, bandwidth optimizasyonu sağlayın ve güvenlik politikalarınızı etkin bir şekilde uygulayın. Dinamik filtreleme ve whitelist yönetimi ile kontrolü elinizde tutun.',
     icon: Lock,
     features: [
       'Tüm VPN protokolleri',
@@ -71,8 +54,8 @@ const issSolutions = [
   },
   {
     id: 'guvenli-internet-zeronet',
-    title: 'Güvenli İnternet: ZeroNet',
-    description: 'ISS müşterileri için kapsamlı internet güvenlik ve filtreleme hizmeti',
+    title: 'Kapsamlı İnternet Güvenlik',
+    description: 'Müşterilerinize güvenli internet deneyimi sunarak marka değerinizi artırın. Gelişmiş DNS filtreleme, malware koruması ve phishing engelleme ile siber tehditlere karşı 360 derece koruma sağlayın. Ebeveyn kontrolü ve özelleştirilebilir güvenlik seviyeleri ile ek gelir kaynakları yaratın.',
     icon: Shield,
     features: [
       'DNS filtreleme',
@@ -85,33 +68,67 @@ const issSolutions = [
       'Ek gelir kaynağı',
       'Marka değeri artışı'
     ]
-  },
-  {
-    id: 'dpi-zeronet',
-    title: 'DPI: ZeroNet',
-    description: 'ISS altyapıları için yüksek performanslı Deep Packet Inspection çözümü',
-    icon: Monitor,
-    features: [
-      '100Gbps+ throughput',
-      'Layer 7 inspection',
-      'SSL/TLS decryption',
-      'Custom rule engine'
-    ],
-    benefits: [
-      'Network visibility',
-      'Security enforcement',
-      'Performance optimization'
-    ]
-  }
+      },
+          {
+        id: 'uygulama-tanima-zeronet',
+        title: 'Uygulama Tanıma',
+        description: 'Ağınızda kullanılan tüm uygulamaları otomatik olarak tespit edin ve kategorize edin. Gelişmiş DPI teknolojisi ile şifreli trafiği bile analiz ederek hangi uygulamaların ne kadar bant genişliği kullandığını görün. Traffic shaping ve QoS politikalarınızı uygulamaya özel olarak yapılandırarak ağ performansınızı optimize edin.',
+      icon: Eye,
+      features: [
+        '5000+ uygulama desteği',
+        'Encrypted traffic analysis',
+        'Behavior-based detection',
+        'Custom signature creation'
+      ],
+      benefits: [
+        '%99.9 doğruluk oranı',
+        'Bandgenişlik optimizasyonu',
+        'QoS politika desteği'
+      ]
+    },
+    {
+      id: 'korelasyon-zeronet',
+      title: 'Akıllı Olay Korelasyon Motoru',
+      description: 'Farklı kaynaklardan gelen güvenlik olaylarını akıllıca birleştirerek gizli tehditleri ortaya çıkarın. Machine learning algoritmaları ile normal davranış kalıplarını öğrenin, anormallikleri tespit edin ve otomatik alarm sistemleri kurun. Proaktif güvenlik yönetimi ile saldırıları engelleyin.',
+      icon: Network,
+      features: [
+        'Multi-source correlation',
+        'ML-based detection',
+        'Automated alerting',
+        'Threat intelligence'
+      ],
+      benefits: [
+        'Proaktif tehdit tespiti',
+        'False positive azaltma',
+        'Otomatik incident response'
+      ]
+    },
+    {
+      id: 'dpi-zeronet',
+      title: 'Yüksek Performanslı Paket İnceleme',
+      description: 'Ağ trafiğinizi derinlemesine analiz ederek Layer 7 seviyesinde tam görünürlük elde edin. 100Gbps+ throughput kapasitesi ile SSL/TLS şifrelemeli trafiği bile inceleyin, özel kurallar tanımlayın ve güvenlik politikalarınızı otomatik uygulayın. Gerçek zamanlı tehdit tespiti ve performans optimizasyonu.',
+      icon: Monitor,
+      features: [
+        '100Gbps+ throughput',
+        'Layer 7 inspection',
+        'SSL/TLS decryption',
+        'Custom rule engine'
+      ],
+      benefits: [
+        'Network visibility',
+        'Security enforcement',
+        'Performance optimization'
+      ]
+    }
 ]
 
 const subSolutions = [
-  { name: 'Loglama: ZeroNet', href: '/cozumler/internet-servis-saglayicilari/loglama-zeronet', icon: Activity },
-  { name: 'Uygulama Tanıma: ZeroNet', href: '/cozumler/internet-servis-saglayicilari/uygulama-tanima-zeronet', icon: Eye },
-  { name: 'VPN: ZeroNet', href: '/cozumler/internet-servis-saglayicilari/vpn-zeronet', icon: Lock },
-  { name: 'Güvenli İnternet: ZeroNet', href: '/cozumler/internet-servis-saglayicilari/guvenli-internet-zeronet', icon: Shield },
-  { name: 'DPI: ZeroNet', href: '/cozumler/internet-servis-saglayicilari/dpi-zeronet', icon: Monitor },
-  { name: 'Yüksek Güvenlikli Konteynerleme', href: '/cozumler/internet-servis-saglayicilari/konteynerleme-yuksek-guvenlikli', icon: Network },
+  { name: 'Akıllı Trafik Kayıt Sistemi', href: '/cozumler/internet-servis-saglayicilari/loglama-zeronet', icon: Activity },
+  { name: 'Gelişmiş VPN Koruma Sistemi', href: '/cozumler/internet-servis-saglayicilari/vpn-zeronet', icon: Lock },
+  { name: 'Kapsamlı İnternet Güvenlik', href: '/cozumler/internet-servis-saglayicilari/guvenli-internet-zeronet', icon: Shield },
+  { name: 'Uygulama Tanıma', href: '/cozumler/internet-servis-saglayicilari/uygulama-tanima-zeronet', icon: Eye },
+  { name: 'Akıllı Olay Korelasyon Motoru', href: '/cozumler/internet-servis-saglayicilari/korelasyon-zeronet', icon: Network },
+  { name: 'Yüksek Performanslı Paket İnceleme', href: '/cozumler/internet-servis-saglayicilari/dpi-zeronet', icon: Monitor },
 ]
 
 export default function ISSPage() {
@@ -334,39 +351,6 @@ export default function ISSPage() {
                 </motion.div>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* Stats Section */}
-        <section className="py-20 bg-purple-600">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center text-white"
-            >
-              <h2 className="text-4xl font-bold mb-12">ZeroNet Performans Metrikleri</h2>
-              <div className="grid md:grid-cols-4 gap-8">
-                {[
-                  { value: '100Gbps+', label: 'Throughput Kapasitesi' },
-                  { value: '10M+', label: 'Saniyede Log Kaydı' },
-                  { value: '5000+', label: 'Desteklenen Uygulama' },
-                  { value: '99.99%', label: 'Uptime Garantisi' }
-                ].map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                  >
-                    <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                    <div className="text-purple-200">{stat.label}</div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
           </div>
         </section>
 

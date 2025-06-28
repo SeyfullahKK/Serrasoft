@@ -40,54 +40,57 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="flex flex-col h-full"
           >
-            <h3 className="text-2xl font-semibold mb-6">Bize Ulaşın</h3>
-            
-            <div className="space-y-6">
-              <motion.div 
-                className="flex items-start gap-4"
-                whileHover={{ x: 10 }}
-              >
-                <div className="w-12 h-12 bg-gradient-to-r from-serrasoft-primary to-serrasoft-secondary rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Phone className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Telefon</h4>
-                  <p className="text-gray-600">+90 (212) 123 45 67</p>
-                </div>
-              </motion.div>
+            <div className="flex-shrink-0">
+              <h3 className="text-2xl font-semibold mb-6">Bize Ulaşın</h3>
+              
+              <div className="space-y-6 mb-8">
+                <motion.div 
+                  className="flex items-start gap-4"
+                  whileHover={{ x: 10 }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-r from-serrasoft-primary to-serrasoft-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Phone className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Telefon</h4>
+                    <p className="text-gray-600">0 (850) 840 7953</p>
+                  </div>
+                </motion.div>
 
-              <motion.div 
-                className="flex items-start gap-4"
-                whileHover={{ x: 10 }}
-              >
-                <div className="w-12 h-12 bg-gradient-to-r from-serrasoft-primary to-serrasoft-secondary rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">E-posta</h4>
-                  <p className="text-gray-600">info@serrasoft.com</p>
-                </div>
-              </motion.div>
+                <motion.div 
+                  className="flex items-start gap-4"
+                  whileHover={{ x: 10 }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-r from-serrasoft-primary to-serrasoft-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Mail className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">E-posta</h4>
+                    <p className="text-gray-600">info@serrasoft.com.tr</p>
+                  </div>
+                </motion.div>
 
-              <motion.div 
-                className="flex items-start gap-4"
-                whileHover={{ x: 10 }}
-              >
-                <div className="w-12 h-12 bg-gradient-to-r from-serrasoft-primary to-serrasoft-secondary rounded-lg flex items-center justify-center flex-shrink-0">
-                  <MapPin className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-1">Adres</h4>
-                  <p className="text-gray-600">Levent, Büyükdere Cad. No:123<br />Şişli, İstanbul 34394</p>
-                </div>
-              </motion.div>
+                <motion.div 
+                  className="flex items-start gap-4"
+                  whileHover={{ x: 10 }}
+                >
+                  <div className="w-12 h-12 bg-gradient-to-r from-serrasoft-primary to-serrasoft-secondary rounded-lg flex items-center justify-center flex-shrink-0">
+                    <MapPin className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold mb-1">Adres</h4>
+                    <p className="text-gray-600">Sanayi Mah. Teknopark Blv. No:1/2C/2101<br />34906 Pendik/İstanbul, Türkiye</p>
+                  </div>
+                </motion.div>
+              </div>
             </div>
 
             <motion.div
@@ -95,12 +98,19 @@ const Contact = () => {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="mt-8 p-6 glass-effect rounded-2xl"
             >
-              <h4 className="font-semibold mb-2">Çalışma Saatleri</h4>
-              <p className="text-gray-600">Pazartesi - Cuma: 09:00 - 18:00</p>
-              <p className="text-gray-600">Cumartesi: 10:00 - 14:00</p>
-              <p className="text-gray-600">Pazar: Kapalı</p>
+              <div className="rounded-2xl overflow-hidden shadow-lg h-48">
+                <iframe
+                  src="https://maps.google.com/maps?q=Sanayi+Mah.+Teknopark+Blv.+No:1/2C/2101,+34906+Pendik,+İstanbul,+Türkiye&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Serrasoft Ofis Konumu - Sanayi Mah. Teknopark Blv. No:1/2C/2101, 34906 Pendik/İstanbul"
+                />
+              </div>
             </motion.div>
           </motion.div>
 

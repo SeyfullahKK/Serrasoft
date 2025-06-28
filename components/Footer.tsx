@@ -1,63 +1,102 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Sparkles, Github, Linkedin, Twitter, Instagram } from 'lucide-react'
+import { Sparkles, Github, Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
+  const handleAddressClick = () => {
+    const confirmed = window.confirm(
+      'Google Maps\'te adresi görüntülemek için yönlendirileceksiniz. Devam etmek istiyor musunuz?'
+    )
+    if (confirmed) {
+      const address = 'Sanayi Mah. Teknopark Blv. No:1/2C/2101, 34906 Pendik/İstanbul'
+      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
+      window.open(mapsUrl, '_blank')
+    }
+  }
+
+  const handlePhoneClick = () => {
+    const confirmed = window.confirm(
+      'Telefon uygulaması açılacak ve numara aranacaktır. Devam etmek istiyor musunuz?'
+    )
+    if (confirmed) {
+      window.location.href = 'tel:+908508407953'
+    }
+  }
+
+  const handleEmailClick = () => {
+    const confirmed = window.confirm(
+      'E-posta uygulaması açılacak ve yeni bir mesaj oluşturulacaktır. Devam etmek istiyor musunuz?'
+    )
+    if (confirmed) {
+      window.location.href = 'mailto:info@serrasoft.com.tr'
+    }
+  }
+
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
+    { icon: Github, href: '#', label: 'GitHub' },
     { icon: Instagram, href: '#', label: 'Instagram' },
   ]
 
   const footerLinks = [
     {
-      title: 'Hizmetler',
+      title: 'Ürünler',
       links: [
-        { name: 'Web Geliştirme', href: '#' },
-        { name: 'Mobil Uygulama', href: '#' },
-        { name: 'E-Ticaret', href: '#' },
-        { name: 'Danışmanlık', href: '#' },
+        { name: 'ZengiNet DPI', href: '/urunler/zenginet-dpi' },
+        { name: 'ViziNet CorreLog', href: '/urunler/vizinet-correlog' },
+        { name: 'ViziNet LibDa', href: '/urunler/vizinet-libda' },
+        { name: 'SysAware', href: '/urunler/sysaware' },
       ],
     },
     {
-      title: 'Şirket',
+      title: 'Çözümler',
       links: [
-        { name: 'Hakkımızda', href: '#about' },
-        { name: 'Kariyer', href: '#' },
-        { name: 'Blog', href: '#' },
-        { name: 'İletişim', href: '#contact' },
+        { name: 'Telco Çözümleri', href: '/cozumler/telco' },
+        { name: 'İSS Çözümleri', href: '/cozumler/internet-servis-saglayicilari' },
+        { name: 'Kurumsal Çözümler', href: '/cozumler/enterprise' },
+        { name: 'Tüm Çözümler', href: '/cozumler' },
       ],
     },
     {
-      title: 'Destek',
+      title: 'Yetkinlikler',
       links: [
-        { name: 'Dokümantasyon', href: '#' },
-        { name: 'SSS', href: '#' },
-        { name: 'Gizlilik Politikası', href: '#' },
-        { name: 'Kullanım Koşulları', href: '#' },
+        { name: 'Networking Solutions', href: '/yetkinlikler/networking-solutions' },
+        { name: 'Distributed Systems', href: '/yetkinlikler/distributed-systems' },
+        { name: 'High Performance Computing', href: '/yetkinlikler/high-performance-computing' },
+        { name: 'Real-time Systems', href: '/yetkinlikler/realtime-systems' },
       ],
     },
+          {
+        title: 'Şirket',
+        links: [
+          { name: 'Hakkımızda', href: '#about' },
+          { name: 'İletişim', href: '#contact' },
+          { name: 'ISO/IEC 27001:2022', href: '#' },
+          { name: 'TS EN ISO 9001:2015', href: '#' },
+        ],
+      },
   ]
 
   return (
     <footer className="bg-serrasoft-dark text-white">
       <div className="container mx-auto px-6 py-12">
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-5 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+            className="md:col-span-1"
           >
             <div className="flex items-center space-x-2 mb-4">
               <Sparkles className="w-8 h-8 text-serrasoft-accent" />
               <span className="text-2xl font-bold">Serrasoft</span>
             </div>
             <p className="text-gray-400 mb-6">
-              Dijital dönüşüm yolculuğunuzda güvenilir teknoloji partneriniz.
+              Teknolojide yenilikçi çözümler
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social, index) => (
@@ -83,13 +122,13 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 * (index + 1) }}
             >
-              <h3 className="text-lg font-semibold mb-4">{section.title}</h3>
+              <h3 className="text-lg font-semibold mb-4 text-serrasoft-accent">{section.title}</h3>
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-serrasoft-accent transition-colors"
+                      className="text-gray-400 hover:text-white transition-colors"
                     >
                       {link.name}
                     </a>
@@ -101,15 +140,44 @@ const Footer = () => {
         </div>
 
         <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="border-t border-gray-800 mt-8 pt-8 text-center"
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="border-t border-gray-800 mt-8 pt-8"
         >
-          <p className="text-gray-400">
-            © {currentYear} Serrasoft. Tüm hakları saklıdır.
-          </p>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-2">
+              <div 
+                className="flex items-center space-x-2 text-gray-400 hover:text-white cursor-pointer transition-colors"
+                onClick={handleAddressClick}
+              >
+                <MapPin className="w-4 h-4" />
+                <span className="text-sm">
+                  Sanayi Mah. Teknopark Blv. No:1/2C/2101, 34906 Pendik/İstanbul
+                </span>
+              </div>
+              <div 
+                className="flex items-center space-x-2 text-gray-400 hover:text-white cursor-pointer transition-colors"
+                onClick={handlePhoneClick}
+              >
+                <Phone className="w-4 h-4" />
+                <span className="text-sm">0 (850) 840 7953</span>
+              </div>
+              <div 
+                className="flex items-center space-x-2 text-gray-400 hover:text-white cursor-pointer transition-colors"
+                onClick={handleEmailClick}
+              >
+                <Mail className="w-4 h-4" />
+                <span className="text-sm">info@serrasoft.com.tr</span>
+              </div>
+            </div>
+            <div className="text-center md:text-right">
+              <p className="text-gray-400 text-sm">
+                © {currentYear} Serrasoft Yazılım Limited Şirketi. Tüm hakları saklıdır.
+              </p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </footer>

@@ -67,7 +67,7 @@ const RealtimeSystemsPage = () => {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 pt-32">
       {/* Breadcrumb */}
       <div className="bg-white border-b">
         <div className="container mx-auto px-6 py-4">

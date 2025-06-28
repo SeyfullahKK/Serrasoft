@@ -3,134 +3,113 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { 
-  Smartphone, 
-  Radio, 
   Activity, 
-  Signal,
-  Satellite,
+  Shield, 
+  Eye,
+  Server,
   Network,
   ArrowRight,
   CheckCircle,
   Zap,
-  Server,
-  Shield,
-  Globe,
-  Eye,
-  Settings
+  Clock,
+  Monitor,
+  FileText,
+  Search,
+  BarChart3,
+  Target,
+  Brain,
+  Database,
+  HardDrive
 } from 'lucide-react'
 
 const telcoProducts = [
   {
-    id: 'network-monitoring',
-    title: 'Ağ İzleme Platformu',
-    description: 'Telco operatörler için gerçek zamanlı ağ performans izleme ve optimizasyon',
-    icon: Activity,
+    id: 'viznet-correlog',
+    title: 'ViziNet Correlog',
+    subtitle: 'Log Korelasyon Platformu',
+    description: 'Telco operatörleri için gelişmiş log korelasyon ve analitik platformu. Network olaylarını gerçek zamanlı olarak analiz edin, korelasyonlar kurun ve proaktif operasyon yönetimi sağlayın.',
+    icon: Network,
     features: [
-      'Real-time network monitoring',
-      'Performance analytics',
-      'Fault detection',
-      'SLA reporting'
+      'Gerçek zamanlı korelasyon',
+      'AI destekli analitik',
+      'Ölçeklenebilir mimari',
+      'Compliance raporlama'
     ],
-    benefits: [
-      'Network uptime artışı',
-      'Proaktif sorun çözümü',
-      'Operasyonel maliyet azalması'
-    ]
+    metrics: [
+      { value: '100M+', label: 'Event/Saniye' },
+      { value: '<100ms', label: 'Korelasyon Süresi' },
+      { value: '99.99%', label: 'Uptime' }
+    ],
+    color: 'indigo',
+    href: '/urunler/telco/viznet-correlog'
   },
   {
-    id: 'billing-revenue-assurance',
-    title: 'Billing & Revenue Assurance',
-    description: 'Telco faturalandırma ve gelir güvence sistemleri',
-    icon: Server,
+    id: 'zenginet-loglama',
+    title: 'Zenginet Loglama',
+    subtitle: 'Log Yönetim Platformu',
+    description: 'Telco operatörleri için yüksek performanslı log toplama ve yönetim platformu. Ağ elementlerinizden gelen tüm log verilerini toplayın, işleyin ve operasyonel zeka için kullanın.',
+    icon: Database,
     features: [
-      'Real-time charging',
-      'Revenue leakage detection',
-      'Fraud management',
-      'Multi-service billing'
+      'Yüksek performanslı toplama',
+      'Akıllı log işleme',
+      'Ölçeklenebilir depolama',
+      'Gerçek zamanlı monitoring'
     ],
-    benefits: [
-      'Gelir kaybı önleme',
-      'Fraud detection',
-      'Müşteri memnuniyeti'
-    ]
+    metrics: [
+      { value: '10M+', label: 'Log/Saniye' },
+      { value: '99.9%', label: 'Data Integrity' },
+      { value: 'Multi-PB', label: 'Storage' }
+    ],
+    color: 'emerald',
+    href: '/urunler/telco/zenginet-loglama'
   },
   {
-    id: 'customer-experience-management',
-    title: 'Customer Experience Management',
-    description: 'Müşteri deneyimi izleme ve iyileştirme çözümleri',
+    id: 'zenginet-uygulama-tanimi',
+    title: 'Zenginet Uygulama Tanımı',
+    subtitle: 'DPI & Uygulama Tanıma',
+    description: 'Gelişmiş DPI teknolojisi ve AI destekli uygulama tanıma platformu. Ağınızdaki tüm uygulamaları tespit edin, sınıflandırın ve performans optimizasyonu yapın.',
     icon: Eye,
     features: [
-      'End-to-end visibility',
-      'QoE monitoring',
-      'Customer journey analytics',
-      'Predictive insights'
+      'Gelişmiş DPI teknolojisi',
+      'AI destekli tanıma',
+      'Gerçek zamanlı analiz',
+      'Performans optimizasyonu'
     ],
-    benefits: [
-      'Müşteri memnuniyeti artışı',
-      'Churn önleme',
-      'Service quality improvement'
-    ]
-  },
-  {
-    id: '5g-core-solutions',
-    title: '5G Core Solutions',
-    description: '5G ağ altyapısı ve core network çözümleri',
-    icon: Signal,
-    features: [
-      '5G SA/NSA support',
-      'Network slicing',
-      'Edge computing',
-      'Ultra-low latency'
+    metrics: [
+      { value: '40Gbps+', label: 'Throughput' },
+      { value: '5000+', label: 'Uygulama' },
+      { value: '%99.5', label: 'Doğruluk' }
     ],
-    benefits: [
-      'Next-gen services',
-      'Network efficiency',
-      'Innovation enablement'
-    ]
-  },
-  {
-    id: 'network-security',
-    title: 'Telco Network Security',
-    description: 'Telco altyapıları için özelleştirilmiş güvenlik çözümleri',
-    icon: Shield,
-    features: [
-      'DDoS protection',
-      'Intrusion detection',
-      'Security orchestration',
-      'Threat intelligence'
-    ],
-    benefits: [
-      'Network güvenliği',
-      'Compliance sağlama',
-      'Risk yönetimi'
-    ]
-  },
-  {
-    id: 'iot-device-management',
-    title: 'IoT Device Management',
-    description: 'IoT cihazları için kapsamlı yönetim ve güvenlik platformu',
-    icon: Settings,
-    features: [
-      'Device provisioning',
-      'Remote management',
-      'Security compliance',
-      'Lifecycle management'
-    ],
-    benefits: [
-      'Operasyonel verimlilik',
-      'Güvenli IoT ekosistemi',
-      'Ölçeklenebilir yönetim'
-    ]
+    color: 'orange',
+    href: '/urunler/telco/zenginet-uygulama-tanimi'
   }
 ]
 
-const subProducts = [
-  { name: 'Ağ İzleme Platformu', href: '/urunler/telco/network-monitoring', icon: Activity },
-  { name: 'Billing & Revenue Assurance', href: '/urunler/telco/billing-revenue-assurance', icon: Server },
-  { name: 'Customer Experience Management', href: '/urunler/telco/customer-experience-management', icon: Eye },
-  { name: '5G Core Solutions', href: '/urunler/telco/5g-core-solutions', icon: Signal },
-  { name: 'Telco Network Security', href: '/urunler/telco/network-security', icon: Shield },
-  { name: 'IoT Device Management', href: '/urunler/telco/iot-device-management', icon: Settings },
+const telcoBenefits = [
+  {
+    title: 'Operasyonel Mükemmellik',
+    description: 'Telco operasyonlarınızı optimize edin',
+    icon: Target,
+    benefits: ['Network optimization', 'Proactive monitoring', 'Automated operations']
+  },
+  {
+    title: 'Gelir Artışı',
+    description: 'Yeni gelir fırsatları yaratın',
+    icon: BarChart3,
+    benefits: ['Service differentiation', 'Premium offerings', 'Data monetization']
+  },
+  {
+    title: 'Müşteri Deneyimi',
+    description: 'Müşteri memnuniyetini artırın',
+    icon: Shield,
+    benefits: ['QoS improvement', 'Service reliability', 'Faster resolution']
+  },
+  {
+    title: 'Compliance & Security',
+    description: 'Güvenlik ve uyumluluk sağlayın',
+    icon: FileText,
+    benefits: ['Regulatory compliance', 'Security monitoring', 'Audit readiness']
+  }
 ]
 
 export default function TelcoProductsPage() {
@@ -138,12 +117,12 @@ export default function TelcoProductsPage() {
     <>
       <Head>
         <title>Telco Ürünleri - Serrasoft</title>
-        <meta name="description" content="Telco operatörler için özel geliştirilmiş yazılım ürünleri ve platformlar" />
+        <meta name="description" content="Telco operatörleri için özel geliştirilmiş ürün portföyü" />
       </Head>
 
       <main className="min-h-screen pt-20">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-orange-900 to-red-800 text-white">
+        <section className="py-20 bg-gradient-to-br from-blue-900 to-purple-800 text-white">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -153,7 +132,7 @@ export default function TelcoProductsPage() {
             >
               <Link href="/urunler">
                 <motion.span 
-                  className="text-orange-200 hover:text-white transition-colors cursor-pointer inline-flex items-center gap-2 mb-4"
+                  className="text-blue-200 hover:text-white transition-colors cursor-pointer inline-flex items-center gap-2 mb-4"
                   whileHover={{ x: -5 }}
                 >
                   ← Ürünlere Dön
@@ -163,68 +142,32 @@ export default function TelcoProductsPage() {
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 Telco Ürünleri
               </h1>
-              <p className="text-xl text-orange-100 mb-8">
-                Telekomunikasyon operatörleri için yeni nesil teknolojiler. 
-                5G'den IoT'ye, ağ yönetiminden müşteri deneyimine kadar kapsamlı çözümler.
+              <p className="text-xl text-blue-100 mb-8">
+                Telco operatörleri için özel geliştirilmiş yenilikçi ürün portföyümüz. 
+                Ağ yönetiminden uygulama analitiğine kadar kapsamlı çözümler.
               </p>
               
               <div className="flex flex-wrap gap-4">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-orange-700 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all"
+                  className="bg-white text-blue-700 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all"
                 >
-                  Ürün Kataloğu
+                  Ürün Demo
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-orange-700 transition-all"
+                  className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-700 transition-all"
                 >
-                  Demo Talep Et
+                  Telco Katalog
                 </motion.button>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Sub Products Navigation */}
-        <section className="py-12 bg-gray-100">
-          <div className="container mx-auto px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <h2 className="text-2xl font-semibold mb-6">Telco Ürün Portföyü</h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                {subProducts.map((product, index) => (
-                  <motion.div
-                    key={product.href}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.4, delay: index * 0.05 }}
-                  >
-                    <Link href={product.href}>
-                      <motion.div
-                        whileHover={{ y: -5 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="glass-effect rounded-xl p-4 text-center hover:shadow-lg transition-all cursor-pointer group"
-                      >
-                        <product.icon className="w-8 h-8 mx-auto mb-2 text-orange-600 group-hover:scale-110 transition-transform" />
-                        <p className="text-sm font-medium text-gray-700 group-hover:text-orange-600 transition-colors">
-                          {product.name}
-                        </p>
-                      </motion.div>
-                    </Link>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Telco Challenges Section */}
+        {/* Products Overview */}
         <section className="py-20 bg-white">
           <div className="container mx-auto px-6">
             <motion.div
@@ -234,60 +177,15 @@ export default function TelcoProductsPage() {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold mb-6">
-                <span className="gradient-text">Telco Sektörünün Zorlukları</span>
+                <span className="gradient-text">Telco Ürün Portföyü</span>
               </h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                5G dönüşümü, artan veri trafiği ve değişen müşteri beklentileri 
-                telco operatörleri yeni çözümler arayışına itiyor.
+                Telco operatörlerinin ağ yönetimi, performans optimizasyonu ve 
+                müşteri deneyimi ihtiyaçlarına yönelik özel ürünler.
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-4 gap-8 mb-16">
-              {[
-                {
-                  title: '5G Dönüşümü',
-                  desc: 'Next-gen network altyapısına geçiş',
-                  icon: Signal
-                },
-                {
-                  title: 'Network Complexity',
-                  desc: 'Karmaşık ağ yapılarının yönetimi',
-                  icon: Network
-                },
-                {
-                  title: 'Customer Experience',
-                  desc: 'Müşteri deneyimi beklentilerinin artması',
-                  icon: Eye
-                },
-                {
-                  title: 'IoT Explosion',
-                  desc: 'Milyarlarca IoT cihazının yönetimi',
-                  icon: Settings
-                }
-              ].map((challenge, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="text-center"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <challenge.icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">{challenge.title}</h3>
-                  <p className="text-gray-600">{challenge.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Products Detail */}
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-6">
-            <div className="space-y-20">
+            <div className="space-y-16">
               {telcoProducts.map((product, index) => (
                 <motion.div
                   key={product.id}
@@ -295,44 +193,44 @@ export default function TelcoProductsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className={`grid md:grid-cols-2 gap-12 items-center ${
-                    index % 2 === 1 ? 'md:flex-row-reverse' : ''
+                  className={`grid lg:grid-cols-2 gap-12 items-center ${
+                    index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                   }`}
                 >
-                  <div className={index % 2 === 1 ? 'md:order-2' : ''}>
+                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-600 rounded-xl flex items-center justify-center">
+                      <div className={`w-16 h-16 bg-gradient-to-r from-${product.color}-500 to-${product.color}-600 rounded-xl flex items-center justify-center`}>
                         <product.icon className="w-8 h-8 text-white" />
                       </div>
-                      <h2 className="text-3xl font-bold">{product.title}</h2>
+                      <div>
+                        <h3 className="text-3xl font-bold">{product.title}</h3>
+                        <p className="text-lg text-gray-600">{product.subtitle}</p>
+                      </div>
                     </div>
                     
                     <p className="text-xl text-gray-600 mb-8">{product.description}</p>
                     
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">Temel Özellikler</h3>
-                      <div className="space-y-3">
-                        {product.features.map((feature, idx) => (
-                          <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: idx * 0.1 }}
-                            className="flex items-center gap-3"
-                          >
-                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-700">{feature}</span>
-                          </motion.div>
-                        ))}
-                      </div>
+                    <div className="grid grid-cols-2 gap-4 mb-8">
+                      {product.features.map((feature, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.4, delay: idx * 0.1 }}
+                          className="flex items-center gap-3"
+                        >
+                          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
+                        </motion.div>
+                      ))}
                     </div>
                     
-                    <Link href={`/urunler/telco/${product.id}`}>
+                    <Link href={product.href}>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 text-orange-600 font-semibold hover:gap-4 transition-all"
+                        className={`flex items-center gap-2 text-${product.color}-600 font-semibold hover:gap-4 transition-all`}
                       >
                         Ürün Detayları
                         <ArrowRight className="w-5 h-5" />
@@ -340,19 +238,45 @@ export default function TelcoProductsPage() {
                     </Link>
                   </div>
                   
-                  <div className={`glass-effect rounded-2xl p-8 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                    <h3 className="text-xl font-semibold mb-6">İş Faydaları</h3>
-                    <div className="space-y-4">
-                      {product.benefits.map((benefit, idx) => (
-                        <motion.div
-                          key={idx}
-                          whileHover={{ x: 10 }}
-                          className="flex items-center gap-3 p-4 bg-gradient-to-r from-orange-50 to-transparent rounded-lg"
-                        >
-                          <Zap className="w-6 h-6 text-yellow-500 flex-shrink-0" />
-                          <span className="font-medium text-gray-800">{benefit}</span>
-                        </motion.div>
+                  <div className={`glass-effect rounded-2xl p-8 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                    <h4 className="text-xl font-semibold mb-6 text-center">Performans Metrikleri</h4>
+                    
+                                        <div className="grid grid-cols-3 gap-4 mb-6">
+                      {product.metrics.map((metric, idx) => (
+                        <div key={idx} className="text-center">
+                          <div className={`text-2xl font-bold text-${product.color}-600`}>{metric.value}</div>
+                          <div className="text-sm text-gray-600">{metric.label}</div>
+                        </div>
                       ))}
+                    </div>
+                    
+                    <div className={`aspect-video bg-gradient-to-br from-${product.color}-50 to-gray-50 rounded-xl flex items-center justify-center relative overflow-hidden`}>
+                      {React.createElement(product.icon, { 
+                        className: `w-24 h-24 text-${product.color}-600 relative z-10` 
+                      })}
+                      
+                      {/* Subtle animated background */}
+                      <div className="absolute inset-0">
+                        {[...Array(3)].map((_, i) => (
+                          <motion.div
+                            key={i}
+                            className={`absolute w-32 h-32 bg-${product.color}-200/20 rounded-full`}
+                            style={{
+                              left: `${20 + i * 30}%`,
+                              top: `${30 + i * 20}%`,
+                            }}
+                            animate={{
+                              scale: [1, 1.2, 1],
+                              opacity: [0.3, 0.6, 0.3]
+                            }}
+                            transition={{
+                              duration: 3,
+                              delay: i * 0.5,
+                              repeat: Infinity
+                            }}
+                          />
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -361,8 +285,8 @@ export default function TelcoProductsPage() {
           </div>
         </section>
 
-        {/* Technology Stack */}
-        <section className="py-20 bg-white">
+        {/* Telco Benefits */}
+        <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -370,50 +294,31 @@ export default function TelcoProductsPage() {
               viewport={{ once: true }}
               className="text-center mb-16"
             >
-              <h2 className="text-4xl font-bold mb-6">Desteklenen Teknolojiler</h2>
+              <h2 className="text-4xl font-bold mb-6">Telco Operatörlerine Sağladığımız Değer</h2>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Industry-standard teknolojiler ve protokollerle tam uyumluluk
+                Ürünlerimiz ile telco operatörlerine sağladığımız ana değer alanları
               </p>
             </motion.div>
 
-            <div className="grid md:grid-cols-4 gap-8">
-              {[
-                {
-                  title: 'Network Protocols',
-                  techs: ['5G NR', '4G LTE', 'IMS', 'SIP', 'Diameter', 'HTTP/2'],
-                  icon: Signal
-                },
-                {
-                  title: 'Standards',
-                  techs: ['3GPP', 'ETSI', 'TMF', 'MEF', 'ITU-T', 'IETF'],
-                  icon: Globe
-                },
-                {
-                  title: 'Cloud & DevOps',
-                  techs: ['Kubernetes', 'Docker', 'OpenStack', 'AWS', 'Azure', 'CI/CD'],
-                  icon: Network
-                },
-                {
-                  title: 'Security',
-                  techs: ['PKI', 'OAuth', 'TLS 1.3', 'IPSec', 'RBAC', 'Zero Trust'],
-                  icon: Shield
-                }
-              ].map((tech, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {telcoBenefits.map((benefit, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="glass-effect rounded-2xl p-6"
+                  className="glass-effect rounded-2xl p-6 text-center hover:shadow-xl transition-all"
                 >
-                  <div className="w-12 h-12 bg-gradient-to-r from-orange-500 to-red-600 rounded-lg flex items-center justify-center mb-4">
-                    <tech.icon className="w-6 h-6 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <benefit.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold mb-4">{tech.title}</h3>
+                  <h3 className="text-xl font-bold mb-3">{benefit.title}</h3>
+                  <p className="text-gray-600 mb-4">{benefit.description}</p>
                   <div className="space-y-2">
-                    {tech.techs.map((item, idx) => (
-                      <div key={idx} className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full inline-block mr-2 mb-2">
+                    {benefit.benefits.map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2 text-sm text-gray-500">
+                        <CheckCircle className="w-4 h-4 text-green-500" />
                         {item}
                       </div>
                     ))}
@@ -424,8 +329,8 @@ export default function TelcoProductsPage() {
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-20 bg-orange-600">
+        {/* Technology Stack */}
+        <section className="py-20 bg-blue-600">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -433,14 +338,14 @@ export default function TelcoProductsPage() {
               viewport={{ once: true }}
               className="text-center text-white"
             >
-              <h2 className="text-4xl font-bold mb-12">Telco Performans Metrikleri</h2>
+              <h2 className="text-4xl font-bold mb-12">Teknoloji Altyapımız</h2>
               <div className="grid md:grid-cols-4 gap-8">
                 {[
-                  { value: '50+', label: 'Telco Operatörü' },
-                  { value: '1B+', label: 'İşlem/Gün' },
-                  { value: '99.99%', label: 'Network Uptime' },
-                  { value: '<1ms', label: 'Latency' }
-                ].map((stat, index) => (
+                  { tech: 'High Performance', desc: 'Computing' },
+                  { tech: 'Machine Learning', desc: 'Analytics' },
+                  { tech: 'Real-time', desc: 'Processing' },
+                  { tech: 'Distributed', desc: 'Architecture' }
+                ].map((tech, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, scale: 0.8 }}
@@ -448,8 +353,8 @@ export default function TelcoProductsPage() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
                   >
-                    <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                    <div className="text-orange-200">{stat.label}</div>
+                    <div className="text-3xl font-bold mb-2">{tech.tech}</div>
+                    <div className="text-blue-200">{tech.desc}</div>
                   </motion.div>
                 ))}
               </div>
@@ -458,7 +363,7 @@ export default function TelcoProductsPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-orange-600 to-red-800">
+        <section className="py-20 bg-gradient-to-r from-blue-600 to-purple-800">
           <div className="container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -467,19 +372,28 @@ export default function TelcoProductsPage() {
               transition={{ duration: 0.6 }}
             >
               <h2 className="text-4xl font-bold text-white mb-6">
-                Telco Dönüşümünüzü Hızlandırın
+                Telco Dönüşümünüzü Başlatın
               </h2>
               <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                Next-generation telco ürünlerimiz ile ağınızı modernize edin 
-                ve müşterilerinize daha iyi hizmet sunun.
+                Telco ürünlerimiz ile ağ operasyonlarınızı optimize edin, 
+                müşteri deneyimini iyileştirin ve yeni gelir fırsatları yaratın.
               </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-white text-orange-700 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all"
-              >
-                Ürün Demo Rezervasyonu
-              </motion.button>
+              <div className="flex flex-wrap gap-4 justify-center">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-white text-blue-700 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all"
+                >
+                  Ürün Demo Talep Et
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-transparent text-white border-2 border-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-blue-700 transition-all"
+                >
+                  Telco Danışmanlığı
+                </motion.button>
+              </div>
             </motion.div>
           </div>
         </section>

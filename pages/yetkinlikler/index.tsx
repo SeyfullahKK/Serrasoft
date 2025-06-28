@@ -1,241 +1,412 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Head from 'next/head'
 import { 
   Network, 
   Database, 
-  Zap, 
-  Timer, 
+  Activity, 
   Cpu,
+  Timer,
   ArrowRight,
   TrendingUp,
   Shield,
-  Activity
+  Home,
+  ChevronRight,
+  CheckCircle,
+  Zap
 } from 'lucide-react'
+
+// Renk sınıflarını döndüren yardımcı fonksiyon
+const getColorClasses = (color: string) => {
+  const colorMap: { [key: string]: { bg: string; text: string; bgLight: string; border: string; gradient: string } } = {
+    blue: {
+      bg: 'bg-blue-600',
+      text: 'text-blue-600',
+      bgLight: 'bg-blue-200/20',
+      border: 'border-blue-200',
+      gradient: 'from-blue-500 to-blue-600'
+    },
+    purple: {
+      bg: 'bg-purple-600',
+      text: 'text-purple-600',
+      bgLight: 'bg-purple-200/20',
+      border: 'border-purple-200',
+      gradient: 'from-purple-500 to-purple-600'
+    },
+    emerald: {
+      bg: 'bg-emerald-600',
+      text: 'text-emerald-600',
+      bgLight: 'bg-emerald-200/20',
+      border: 'border-emerald-200',
+      gradient: 'from-emerald-500 to-emerald-600'
+    },
+    orange: {
+      bg: 'bg-orange-600',
+      text: 'text-orange-600',
+      bgLight: 'bg-orange-200/20',
+      border: 'border-orange-200',
+      gradient: 'from-orange-500 to-orange-600'
+    },
+    pink: {
+      bg: 'bg-pink-600',
+      text: 'text-pink-600',
+      bgLight: 'bg-pink-200/20',
+      border: 'border-pink-200',
+      gradient: 'from-pink-500 to-pink-600'
+    }
+  }
+  return colorMap[color] || colorMap.blue
+}
 
 const yetkinlikler = [
   {
     id: 'networking-solutions',
     title: 'Networking Solutions',
-    description: 'Modern network altyapıları, SDN teknolojileri ve next-generation network çözümleri',
+    subtitle: 'Modern Ağ Altyapıları',
+    description: 'SDN teknolojileri, next-generation firewall ve network security çözümleri ile modern ağ altyapıları.',
     icon: Network,
-    color: 'from-blue-500 to-cyan-500',
-    features: ['SDN & NFV', 'Network Security', 'Load Balancing', 'WiFi Management'],
+    color: 'blue',
+    features: [
+      'Software Defined Networking',
+      'Next-generation Firewall',
+      'Network Security',
+      'Load Balancing'
+    ],
+    metrics: [
+      { value: '99.99%', label: 'Uptime' },
+      { value: '40Gbps', label: 'Throughput' },
+      { value: '<1ms', label: 'Latency' }
+    ],
     link: '/yetkinlikler/networking-solutions'
   },
   {
     id: 'distributed-systems',
     title: 'Distributed Systems',
-    description: 'Ölçeklenebilir mikroservis mimarileri ve distributed computing platformları',
+    subtitle: 'Dağıtık Sistem Mimarileri',
+    description: 'Mikroservis mimarileri, distributed computing ve ölçeklenebilir sistem tasarımları.',
     icon: Database,
-    color: 'from-purple-500 to-indigo-500',
-    features: ['Microservices', 'Message Queues', 'Distributed Cache', 'Service Mesh'],
+    color: 'purple',
+    features: [
+      'Microservices Architecture',
+      'Distributed Databases',
+      'Message Queues',
+      'Service Mesh'
+    ],
+    metrics: [
+      { value: '1000x', label: 'Scalability' },
+      { value: '99.9%', label: 'Availability' },
+      { value: '<100ms', label: 'Response Time' }
+    ],
     link: '/yetkinlikler/distributed-systems'
   },
   {
     id: 'realtime-systems',
-    title: 'Realtime Systems',
-    description: 'Gerçek zamanlı veri işleme ve streaming analytics çözümleri',
+    title: 'Real-time Systems',
+    subtitle: 'Gerçek Zamanlı Sistemler',
+    description: 'Streaming analytics, real-time data processing ve event-driven architecture çözümleri.',
     icon: Activity,
-    color: 'from-green-500 to-teal-500',
-    features: ['Stream Processing', 'Real-time Analytics', 'Event Streaming', 'Live Dashboards'],
+    color: 'emerald',
+    features: [
+      'Stream Processing',
+      'Real-time Analytics',
+      'Event Streaming',
+      'Live Dashboards'
+    ],
+    metrics: [
+      { value: '10M+', label: 'Events/sec' },
+      { value: '<5ms', label: 'Processing Time' },
+      { value: '100TB', label: 'Data Volume' }
+    ],
     link: '/yetkinlikler/realtime-systems'
   },
   {
     id: 'low-latency-systems',
     title: 'Low Latency Systems',
-    description: 'Ultra-düşük gecikme sistemleri ve high-frequency trading teknolojileri',
+    subtitle: 'Ultra Düşük Gecikme',
+    description: 'High-frequency trading, ultra-low latency sistemleri ve hardware acceleration.',
     icon: Timer,
-    color: 'from-orange-500 to-red-500',
-    features: ['Ultra-low Latency', 'High Frequency Trading', 'Edge Computing', 'Hardware Acceleration'],
+    color: 'orange',
+    features: [
+      'Ultra-low Latency',
+      'Hardware Acceleration',
+      'High Frequency Trading',
+      'Edge Computing'
+    ],
+    metrics: [
+      { value: '<1μs', label: 'Latency' },
+      { value: '1M+', label: 'TPS' },
+      { value: '99.99%', label: 'Precision' }
+    ],
     link: '/yetkinlikler/low-latency-systems'
   },
   {
     id: 'high-performance-computing',
     title: 'High Performance Computing',
-    description: 'Supercomputing, parallel processing ve büyük ölçekli hesaplama sistemleri',
+    subtitle: 'Yüksek Performans Hesaplama',
+    description: 'Supercomputing, parallel processing ve büyük ölçekli hesaplama sistemleri.',
     icon: Cpu,
-    color: 'from-pink-500 to-rose-500',
-    features: ['Parallel Computing', 'GPU Acceleration', 'Cluster Management', 'Scientific Computing'],
+    color: 'pink',
+    features: [
+      'Parallel Computing',
+      'GPU Acceleration',
+      'Cluster Management',
+      'Scientific Computing'
+    ],
+    metrics: [
+      { value: '100+', label: 'TFLOPS' },
+      { value: '10K+', label: 'Cores' },
+      { value: '500TB', label: 'Memory' }
+    ],
     link: '/yetkinlikler/high-performance-computing'
   }
 ]
 
-const stats = [
-  { number: '15+', label: 'Yıl Deneyim', icon: TrendingUp },
-  { number: '500+', label: 'Tamamlanan Proje', icon: Shield },
-  { number: '50+', label: 'Uzman Geliştirici', icon: Network },
-  { number: '99.9%', label: 'Sistem Uptime', icon: Activity }
-]
-
 const YetkinliklerPage = () => {
+  useEffect(() => {
+    // Navbar'ı sayfa temasıyla uyumlu hale getir
+    const navbar = document.querySelector('nav')
+    if (navbar) {
+      navbar.style.background = 'rgba(255, 255, 255, 1)'
+      navbar.style.backdropFilter = 'blur(10px)'
+      navbar.style.borderBottom = 'none'
+      navbar.style.boxShadow = 'none'
+    }
+
+    // Cleanup function - sayfa değiştiğinde orijinal stili geri yükle
+    return () => {
+      if (navbar) {
+        navbar.style.background = ''
+        navbar.style.backdropFilter = ''
+        navbar.style.borderBottom = ''
+        navbar.style.boxShadow = ''
+      }
+    }
+  }, [])
+
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="relative py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20"></div>
-        <motion.div
-          animate={{
-            scale: [1, 1.1, 1],
-            rotate: [0, 45, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            repeatType: "reverse",
-          }}
-          className="absolute top-20 right-20 w-96 h-96 bg-gradient-to-r from-serrasoft-primary/30 to-serrasoft-accent/30 rounded-full blur-3xl"
-        />
-
-        <div className="container mx-auto px-6 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center max-w-4xl mx-auto"
-          >
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="gradient-text">Teknoloji Yetkinliklerimiz</span>
-            </h1>
-            <p className="text-xl text-gray-300 mb-8">
-              Modern teknolojilerde derin expertise ile karmaşık sistemleri 
-              basit ve ölçeklenebilir çözümlere dönüştürüyoruz
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-serrasoft-primary to-serrasoft-secondary text-white px-8 py-4 rounded-full font-medium hover:shadow-xl transition-all"
-              >
-                Projelerimizi İnceleyin
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="glass-effect px-8 py-4 rounded-full font-medium hover:shadow-lg transition-all border border-white/20 text-white"
-              >
-                Teknik Konsültasyon
-              </motion.button>
+    <>
+      <Head>
+        <title>Teknolojik Yetkinliklerimiz - Serrasoft</title>
+        <meta name="description" content="Modern teknoloji alanlarında derin uzmanlık ve kanıtlanmış başarı geçmişi" />
+      </Head>
+      
+      <main className="min-h-screen pt-24 bg-white">
+        {/* Breadcrumb */}
+        <div className="bg-white">
+          <div className="container mx-auto px-6 py-4">
+            <div className="flex items-center space-x-2 text-sm text-gray-500">
+              <Link href="/">
+                <Home className="w-4 h-4 hover:text-gray-700 cursor-pointer transition-colors" />
+              </Link>
+              <ChevronRight className="w-4 h-4" />
+              <span className="text-gray-800 font-medium">Yetkinlikler</span>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="text-center"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-serrasoft-primary to-serrasoft-secondary rounded-full mb-4">
-                  <stat.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-2">{stat.number}</h3>
-                <p className="text-gray-600">{stat.label}</p>
-              </motion.div>
-            ))}
           </div>
         </div>
-      </section>
 
-      {/* Yetkinlikler Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              <span className="gradient-text">Core Teknoloji Alanları</span>
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Her teknoloji alanında derin uzmanlık ve kanıtlanmış başarı geçmişi
-            </p>
-          </motion.div>
-
-          <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            {yetkinlikler.map((yetkinlik, index) => (
-              <motion.div
-                key={yetkinlik.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
-                className="group"
-              >
-                <Link href={yetkinlik.link}>
-                  <div className="glass-effect rounded-2xl p-8 hover:shadow-2xl transition-all duration-300 cursor-pointer h-full">
-                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${yetkinlik.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform`}>
-                      <yetkinlik.icon className="w-8 h-8 text-white" />
-                    </div>
-                    
-                    <h3 className="text-2xl font-bold mb-4 group-hover:text-serrasoft-primary transition-colors">
-                      {yetkinlik.title}
-                    </h3>
-                    
-                    <p className="text-gray-600 mb-6">
-                      {yetkinlik.description}
-                    </p>
-                    
-                    <div className="space-y-2 mb-6">
-                      {yetkinlik.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center gap-2">
-                          <div className="w-2 h-2 bg-serrasoft-primary rounded-full"></div>
-                          <span className="text-sm text-gray-600">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    <div className="flex items-center gap-2 text-serrasoft-primary font-medium group-hover:gap-4 transition-all">
-                      <span>Detayları Görüntüle</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+        {/* Hero Section with Gradient */}
+        <section className="relative py-20 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute -top-4 -right-4 w-72 h-72 bg-blue-600 rounded-full blur-3xl"></div>
+            <div className="absolute -bottom-8 -left-8 w-96 h-96 bg-purple-600 rounded-full blur-3xl"></div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-serrasoft-primary to-serrasoft-secondary">
-        <div className="container mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center text-white"
-          >
-            <h2 className="text-4xl font-bold mb-6">
-              Projenizde Hangi Teknolojiye İhtiyacınız Var?
-            </h2>
-            <p className="text-xl mb-8 opacity-90">
-              Uzman ekibimizle birlikte en karmaşık teknik challengeları çözelim
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-white text-serrasoft-primary px-8 py-4 rounded-full font-medium hover:shadow-xl transition-all"
+          
+          <div className="container mx-auto px-6 relative">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="max-w-4xl"
             >
-              Ücretsiz Teknik Konsültasyon
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
-    </div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                  <Zap className="w-6 h-6 text-white" />
+                </div>
+                <h1 className="text-5xl font-light text-gray-800">
+                  Teknolojik Yetkinliklerimiz
+                </h1>
+              </div>
+              <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">
+                Modern teknoloji alanlarında derin uzmanlık ile karmaşık sistemleri 
+                basit ve ölçeklenebilir çözümlere dönüştürüyoruz.
+              </p>
+              
+              {/* Quick Stats */}
+              <div className="flex flex-wrap gap-8 mt-10">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                    <TrendingUp className="w-6 h-6 text-blue-600" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-semibold text-gray-800">5+</div>
+                    <div className="text-sm text-gray-600">Teknoloji Alanı</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                    <Shield className="w-6 h-6 text-purple-600" />
+                  </div>
+                  <div>
+                    <div className="text-2xl font-semibold text-gray-800">15+</div>
+                    <div className="text-sm text-gray-600">Yıl Deneyim</div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Yetkinlikler Grid */}
+        <section className="py-24 bg-gray-50/50">
+          <div className="container mx-auto px-6">
+            <div className="space-y-32">
+              {yetkinlikler.map((yetkinlik, index) => {
+                const colors = getColorClasses(yetkinlik.color)
+                
+                return (
+                  <motion.div
+                    key={yetkinlik.id}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className={`grid lg:grid-cols-2 gap-16 items-center ${
+                      index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
+                    }`}
+                  >
+                    {/* Yetkinlik Info */}
+                    <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+                      <div className="flex items-center gap-4 mb-8">
+                        <motion.div 
+                          whileHover={{ scale: 1.1, rotate: 5 }}
+                          className={`w-20 h-20 bg-gradient-to-r ${colors.gradient} rounded-2xl flex items-center justify-center shadow-lg`}
+                        >
+                          <yetkinlik.icon className="w-10 h-10 text-white" />
+                        </motion.div>
+                        <div>
+                          <h2 className="text-4xl font-light text-gray-800">{yetkinlik.title}</h2>
+                          <p className="text-xl text-gray-500 mt-1">{yetkinlik.subtitle}</p>
+                        </div>
+                      </div>
+                      
+                      <p className="text-lg text-gray-600 mb-10 leading-relaxed">
+                        {yetkinlik.description}
+                      </p>
+                      
+                      <div className="mb-10">
+                        <h3 className="text-lg font-semibold mb-6 text-gray-800">Temel Teknolojiler</h3>
+                        <div className="grid grid-cols-2 gap-4">
+                          {yetkinlik.features.map((feature, idx) => (
+                            <motion.div 
+                              key={idx} 
+                              initial={{ opacity: 0, x: -10 }}
+                              whileInView={{ opacity: 1, x: 0 }}
+                              viewport={{ once: true }}
+                              transition={{ delay: idx * 0.1 }}
+                              className="flex items-center gap-3 p-3 rounded-lg bg-white border border-gray-100 hover:border-gray-200 transition-all"
+                            >
+                              <CheckCircle className={`w-5 h-5 ${colors.text} flex-shrink-0`} />
+                              <span className="text-gray-700">{feature}</span>
+                            </motion.div>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <Link href={yetkinlik.link}>
+                        <motion.span 
+                          whileHover={{ x: 5 }}
+                          className={`inline-flex items-center gap-3 ${colors.text} font-semibold text-lg hover:gap-5 transition-all cursor-pointer`}
+                        >
+                          Detayları İncele
+                          <ArrowRight className="w-5 h-5" />
+                        </motion.span>
+                      </Link>
+                    </div>
+                    
+                    {/* Performance Metrics Card */}
+                    <motion.div 
+                      whileHover={{ y: -5 }}
+                      className={`bg-white rounded-2xl p-10 shadow-xl hover:shadow-2xl transition-all ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}
+                    >
+                      <h4 className="text-2xl font-semibold mb-8 text-center text-gray-800">Performans Metrikleri</h4>
+                      
+                      <div className="grid grid-cols-3 gap-6 mb-10">
+                        {yetkinlik.metrics.map((metric, idx) => (
+                          <motion.div 
+                            key={idx} 
+                            initial={{ scale: 0 }}
+                            whileInView={{ scale: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: idx * 0.1, type: "spring" }}
+                            className="text-center"
+                          >
+                            <div className={`text-3xl font-bold ${colors.text} mb-2`}>
+                              {metric.value}
+                            </div>
+                            <div className="text-sm text-gray-600 font-medium">{metric.label}</div>
+                          </motion.div>
+                        ))}
+                      </div>
+                      
+                      <div className={`aspect-video bg-gradient-to-br from-gray-50 to-${yetkinlik.color}-50/30 rounded-xl flex items-center justify-center relative overflow-hidden`}>
+                        <yetkinlik.icon className={`w-32 h-32 ${colors.text} opacity-10 absolute`} />
+                        <yetkinlik.icon className={`w-20 h-20 ${colors.text} relative z-10`} />
+                        
+                        {/* Animated Circles */}
+                        <div className="absolute inset-0">
+                          {[...Array(3)].map((_, i) => (
+                            <motion.div
+                              key={i}
+                              className={`absolute w-24 h-24 ${colors.bgLight} rounded-full`}
+                              style={{
+                                left: `${25 + i * 25}%`,
+                                top: `${20 + i * 20}%`,
+                              }}
+                              animate={{
+                                scale: [1, 1.5, 1],
+                                opacity: [0.3, 0.6, 0.3]
+                              }}
+                              transition={{
+                                duration: 4,
+                                delay: i * 0.8,
+                                repeat: Infinity
+                              }}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+
+
+        {/* CTA Section */}
+        <section className="py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-purple-600">
+          <div className="container mx-auto px-6 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-5xl font-light text-white mb-8">
+                Teknoloji Yetkinliklerimizi Keşfedin
+              </h2>
+              <p className="text-2xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+                Projenizde hangi teknolojiye ihtiyacınız var? 
+                Uzman ekibimizle birlikte en uygun çözümü bulalım.
+              </p>
+            </motion.div>
+          </div>
+        </section>
+      </main>
+    </>
   )
 }
 

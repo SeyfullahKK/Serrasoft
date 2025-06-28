@@ -13,65 +13,67 @@ import {
   Cpu,
   Cloud,
   Zap,
-  Monitor
+  Monitor,
+  Search,
+  BarChart
 } from 'lucide-react'
 
 const services = [
   {
+    icon: Shield,
+    title: 'Network Monitoring & Management & Security',
+    description: 'Ağ izleme, yönetimi ve güvenliği konularında uzman çözümler.',
+    color: 'from-green-400 to-teal-600',
+    link: '/yetkinlikler/networking-solutions'
+  },
+  {
+    icon: BarChart,
+    title: 'Big Data Analysis & Management',
+    description: 'Büyük veri analizi ve yönetimi için profesyonel çözümler.',
+    color: 'from-blue-400 to-cyan-600',
+    link: '/yetkinlikler/distributed-systems'
+  },
+  {
+    icon: Activity,
+    title: 'Traffic Analysis & Correlation',
+    description: 'Trafik analizi ve korelasyon servisleri ile ağ trafiği yönetimi.',
+    color: 'from-purple-400 to-indigo-600',
+    link: '/cozumler'
+  },
+  {
+    icon: Search,
+    title: 'Deep Packet Inspection (DPI)',
+    description: 'Derinlemesine paket incelemesi teknolojileri ve çözümleri.',
+    color: 'from-orange-400 to-red-600',
+    link: '/urunler/zenginet-dpi'
+  },
+  {
+    icon: Database,
+    title: 'Distributed Systems',
+    description: 'Dağıtık sistem mimarileri ve yüksek performans çözümleri.',
+    color: 'from-indigo-400 to-purple-600',
+    link: '/yetkinlikler/distributed-systems'
+  },
+  {
     icon: Network,
     title: 'Telco Çözümleri',
-    description: '5G altyapısı, network monitoring ve telco operatör çözümleri.',
-    color: 'from-orange-400 to-red-600',
+    description: 'Telekomünikasyon operatörleri için özel çözümler.',
+    color: 'from-cyan-400 to-blue-600',
     link: '/cozumler/telco'
   },
   {
     icon: Globe,
     title: 'İSS Çözümleri',
-    description: 'Internet servis sağlayıcıları için ZeroNet serisi ürünler.',
-    color: 'from-purple-400 to-indigo-600',
+    description: 'Internet servis sağlayıcıları için ZengiNet serisi ürünler.',
+    color: 'from-red-400 to-pink-600',
     link: '/cozumler/internet-servis-saglayicilari'
   },
   {
     icon: Building2,
     title: 'Kurumsal Çözümler',
-    description: 'Modern işletmeler için dijital dönüşüm ve güvenlik çözümleri.',
-    color: 'from-blue-400 to-cyan-600',
-    link: '/cozumler/enterprise'
-  },
-  {
-    icon: Shield,
-    title: 'Network Security',
-    description: 'Next-gen firewall, DPI ve siber güvenlik çözümleri.',
-    color: 'from-green-400 to-teal-600',
-    link: '/urunler/networking-solutions'
-  },
-  {
-    icon: Cpu,
-    title: 'High Performance Computing',
-    description: 'Supercomputing ve parallel processing platformları.',
-    color: 'from-cyan-400 to-blue-600',
-    link: '/urunler/high-performance-computing'
-  },
-  {
-    icon: Database,
-    title: 'Distributed Systems',
-    description: 'Microservices, distributed databases ve message queues.',
-    color: 'from-indigo-400 to-purple-600',
-    link: '/urunler/distributed-systems'
-  },
-  {
-    icon: Zap,
-    title: 'Real-Time Systems',
-    description: 'Ultra-low latency ve streaming analytics çözümleri.',
-    color: 'from-red-400 to-pink-600',
-    link: '/urunler/realtime-systems'
-  },
-  {
-    icon: Users,
-    title: 'Teknik Danışmanlık',
-    description: 'Network mimarisi, sistem optimizasyonu ve teknoloji danışmanlığı.',
+    description: 'Kurumsal yatırımcılar için network görünürlülük çözümleri.',
     color: 'from-yellow-400 to-orange-600',
-    link: '/destek'
+    link: '/cozumler/enterprise'
   },
 ]
 
@@ -90,8 +92,8 @@ const Services = () => {
             <span className="gradient-text">Hizmetlerimiz</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Telco'dan enterprise'a, network güvenliğinden high-performance computing'e 
-            kadar geniş teknoloji yelpazesinde uzman çözümler
+            Network monitoring ve güvenliğinden büyük veri analizine, 
+            deep packet inspection'dan dağıtık sistemlere kadar geniş teknoloji yelpazesinde uzman çözümler
           </p>
         </motion.div>
 

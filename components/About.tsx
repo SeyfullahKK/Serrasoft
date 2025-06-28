@@ -1,27 +1,27 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Award, Users, Clock, Rocket } from 'lucide-react'
+import { Award, Users, Clock, Rocket, Building, Calendar } from 'lucide-react'
 
 const stats = [
   {
-    icon: Users,
-    value: '100+',
-    label: 'Mutlu Müşteri',
+    icon: Calendar,
+    value: '2017',
+    label: 'Kuruluş Yılı',
+  },
+  {
+    icon: Building,
+    value: 'İstanbul Teknopark',
+    label: 'Merkez Lokasyon',
   },
   {
     icon: Award,
-    value: '250+',
-    label: 'Tamamlanan Proje',
+    value: 'TRL-9',
+    label: 'Teknolojik Hazırlık',
   },
   {
-    icon: Clock,
-    value: '10+',
-    label: 'Yıllık Deneyim',
-  },
-  {
-    icon: Rocket,
-    value: '24/7',
-    label: 'Destek',
+    icon: Users,
+    value: '4+',
+    label: 'Aktif Müşteri',
   },
 ]
 
@@ -37,18 +37,19 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="text-gray-900">Neden</span>{' '}
-              <span className="gradient-text">Serrasoft?</span>
+              <span className="gradient-text">Hakkımızda</span>
             </h2>
             <p className="text-lg text-gray-600 mb-6">
-              Serrasoft olarak, teknolojinin gücünü işletmelerin hizmetine sunuyoruz. 
-              Uzman ekibimiz ve yenilikçi yaklaşımımızla, dijital dönüşüm sürecinizde 
-              güvenilir partneriniz oluyoruz.
+              Serrasoft Yazılım Limited Şirketi, Nisan 2017'de kurulmuş olup Ağustos 2019'da 
+              İstanbul Teknopark'ta faaliyetlerine başlamıştır. Network Monitoring & Management & Security, 
+              Big Data Analysis & Management, Traffic Analysis & Correlation, Deep Packet Inspection (DPI) 
+              ve Distributed Systems alanlarında uzmanlaşmış bir teknoloji şirketiyiz.
             </p>
             <p className="text-lg text-gray-600 mb-8">
-              Müşteri odaklı çözümlerimiz ve agile metodolojimiz sayesinde, 
-              projelerinizi zamanında ve bütçenize uygun şekilde teslim ediyoruz. 
-              Her projede kalite ve mükemmelliği hedefliyoruz.
+              Projelerimiz, ithalat ikamesi ve ihracat potansiyeli açısından oldukça umut verici 
+              bir konumdadır. Türkiye'de bu alanlardaki teknolojik eksiklikler ve devamlı artan 
+              çözüm talepleri bizim için önemli fırsatlar sunmaktadır. Birkaç yıl içinde Türkiye'de 
+              ve birçok ülkede, ürün kalitemizle bu alanlarda önemli bir konuma gelmeyi hedeflemekteyiz.
             </p>
             
             <div className="grid grid-cols-2 gap-6">
@@ -64,8 +65,8 @@ const About = () => {
                   <div className="flex justify-center mb-2">
                     <stat.icon className="w-8 h-8 text-serrasoft-primary" />
                   </div>
-                  <h3 className="text-3xl font-bold gradient-text mb-1">{stat.value}</h3>
-                  <p className="text-gray-600">{stat.label}</p>
+                  <h3 className="text-2xl font-bold gradient-text mb-1">{stat.value}</h3>
+                  <p className="text-gray-600 text-sm">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
@@ -98,8 +99,8 @@ const About = () => {
                     <Award className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold">ISO 27001</p>
-                    <p className="text-sm text-gray-600">Sertifikalı</p>
+                    <p className="font-semibold">ISO 27001:2022</p>
+                    <p className="text-sm text-gray-600">& TS EN ISO 9001:2015</p>
                   </div>
                 </div>
               </motion.div>

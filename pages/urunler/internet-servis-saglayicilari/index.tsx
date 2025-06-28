@@ -19,77 +19,50 @@ import {
 
 const issProducts = [
   {
-    id: 'zeronet-logging',
-    title: 'ZeroNet Logging Platform',
-    description: 'ISS altyapıları için yüksek hacimli trafik loglama ve analiz sistemi',
+    id: 'zenginet-loglama',
+    title: 'Zenginet - Loglama',
+    subtitle: 'ISS Log Yönetim Platformu',
+    description: 'ISS altyapıları için yüksek hacimli trafik loglama ve analiz sistemi. Yasal zorunlulukları karşılayın ve operasyonel zeka elde edin.',
     icon: Activity,
     features: [
       'Real-time log collection',
-      'Petabyte-scale storage',
+      'Petabyte-scale storage', 
       'Compliance reporting',
       'Advanced analytics'
     ],
-    benefits: [
-      '10M+ logs/second',
-      'Legal compliance',
-      'Forensic analysis'
-    ]
-  },
-  {
-    id: 'zeronet-dpi',
-    title: 'ZeroNet DPI Engine',
-    description: 'Deep Packet Inspection ile network traffic analysis ve classification',
-    icon: Monitor,
-    features: [
-      'Layer 7 inspection',
-      '100Gbps+ throughput',
-      'Protocol detection',
-      'Custom signatures'
+    metrics: [
+      { value: '10M+', label: 'Log/Saniye' },
+      { value: '99.9%', label: 'Data Integrity' },
+      { value: 'PB', label: 'Storage' }
     ],
-    benefits: [
-      'Complete visibility',
-      'Traffic optimization',
-      'Security enforcement'
-    ]
+    color: 'emerald',
+    href: '/urunler/internet-servis-saglayicilari/zenginet-loglama'
   },
   {
-    id: 'zeronet-app-recognition',
-    title: 'ZeroNet App Recognition',
-    description: 'AI-powered uygulama tanıma ve sınıflandırma sistemi',
-    icon: Eye,
-    features: [
-      'ML-based detection',
-      '5000+ applications',
-      'Encrypted traffic analysis',
-      'Custom app profiles'
-    ],
-    benefits: [
-      '99.9% accuracy',
-      'QoS optimization',
-      'Bandwidth management'
-    ]
-  },
-  {
-    id: 'zeronet-vpn-detection',
-    title: 'ZeroNet VPN Detection',
-    description: 'VPN ve proxy trafiği tespit ve yönetim çözümü',
+    id: 'vpn-zenginet',
+    title: 'VPN: Zenginet',
+    subtitle: 'VPN Tespit ve Yönetim',
+    description: 'VPN ve proxy trafiği tespit ve yönetim çözümü. ISS ağınızda VPN kullanımını izleyin ve politikalarınızı uygulayın.',
     icon: Lock,
     features: [
       'VPN protocol detection',
       'Obfuscated VPN identification',
-      'Policy enforcement',
+      'Policy enforcement', 
       'Whitelist management'
     ],
-    benefits: [
-      'Traffic control',
-      'Bandwidth management',
-      'Policy compliance'
-    ]
+    metrics: [
+      { value: '99.5%', label: 'Detection Rate' },
+      { value: '40Gbps+', label: 'Throughput' },
+      { value: '<5ms', label: 'Latency' }
+    ],
+    color: 'blue',
+    href: '/urunler/internet-servis-saglayicilari/vpn-zenginet'
   },
   {
-    id: 'zeronet-security',
-    title: 'ZeroNet Security Suite',
-    description: 'ISS ağları için kapsamlı güvenlik ve tehdit koruması',
+    id: 'guvenli-internet-zenginet',
+    title: 'Güvenli İnternet: Zenginet',
+    subtitle: 'Güvenlik ve Tehdit Koruması',
+    description: 'ISS ağları için kapsamlı güvenlik ve tehdit koruması. Müşterilerinizi zararlı içeriklerden koruyun.',
     icon: Shield,
     features: [
       'DDoS protection',
@@ -97,28 +70,78 @@ const issProducts = [
       'Botnet identification',
       'Threat intelligence'
     ],
-    benefits: [
-      'Network protection',
-      'Customer safety',
-      'Brand reputation'
-    ]
+    metrics: [
+      { value: '99.9%', label: 'Threat Detection' },
+      { value: '100Gbps+', label: 'Protection' },
+      { value: '24/7', label: 'Monitoring' }
+    ],
+    color: 'red',
+    href: '/urunler/internet-servis-saglayicilari/guvenli-internet-zenginet'
   },
   {
-    id: 'network-optimization',
-    title: 'Network Optimization Engine',
-    description: 'ISS ağ performansı ve kaynak kullanımı optimizasyonu',
-    icon: Settings,
+    id: 'uygulama-tanimi-zenginet',
+    title: 'Uygulama Tanımı: Zenginet',
+    subtitle: 'DPI ve Uygulama Analizi',
+    description: 'AI destekli uygulama tanıma ve sınıflandırma sistemi. ISS ağınızdaki tüm uygulamaları tespit edin ve yönetin.',
+    icon: Eye,
     features: [
-      'Traffic engineering',
-      'Capacity planning',
-      'QoS management',
-      'Performance analytics'
+      'ML-based detection',
+      '5000+ applications',
+      'Encrypted traffic analysis',
+      'Custom app profiles'
+    ],
+    metrics: [
+      { value: '5000+', label: 'Uygulama' },
+      { value: '99.9%', label: 'Doğruluk' },
+      { value: '40Gbps+', label: 'Throughput' }
+    ],
+    color: 'orange',
+    href: '/urunler/internet-servis-saglayicilari/uygulama-tanimi-zenginet'
+  },
+  {
+    id: 'korelasyon-viznet-correlog',
+    title: 'Korelasyon: ViziNet Correlog',
+    description: 'ISS operasyonları için gelişmiş log korelasyon ve network analitik çözümü',
+    icon: Activity,
+    color: 'from-purple-500 to-indigo-600',
+    features: [
+      'Gerçek zamanlı log korelasyon',
+      'ISS compliance reporting', 
+      'Network anomaly detection',
+      'Custom analytics dashboards'
+    ],
+    metrics: [
+      { value: '100M+', label: 'Event/Saniye' },
+      { value: '<100ms', label: 'Korelasyon' },
+      { value: '99.99%', label: 'Uptime' }
     ],
     benefits: [
-      'Cost reduction',
-      'Performance improvement',
-      'Customer satisfaction'
-    ]
+      'Proaktif problem tespiti',
+      'Yasal uyumluluk',
+      'Network görünürlüğü',
+      'Operasyonel verimlilik'
+    ],
+    href: '/urunler/internet-servis-saglayicilari/korelasyon-viznet-correlog'
+  },
+  {
+    id: 'dpi-zenginet',
+    title: 'DPI: Zenginet',
+    subtitle: 'Deep Packet Inspection',
+    description: 'Deep Packet Inspection ile network traffic analysis ve classification. ISS ağınızda tam görünürlük sağlayın.',
+    icon: Monitor,
+    features: [
+      'Layer 7 inspection',
+      '100Gbps+ throughput',
+      'Protocol detection',
+      'Custom signatures'
+    ],
+    metrics: [
+      { value: '100Gbps+', label: 'Throughput' },
+      { value: 'Layer 7', label: 'Deep Inspection' },
+      { value: '<1ms', label: 'Latency' }
+    ],
+    color: 'purple',
+    href: '/urunler/internet-servis-saglayicilari/dpi-zenginet'
   }
 ]
 
@@ -237,10 +260,23 @@ export default function ISSProductsPage() {
           </div>
         </section>
 
-        {/* Products Detail */}
+        {/* Products Overview */}
         <section className="py-20 bg-gray-50">
           <div className="container mx-auto px-6">
-            <div className="space-y-20">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold mb-6">ISS Ürün Portföyü</h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                Internet Servis Sağlayıcıları için özel geliştirilmiş 6 ana ürün ile 
+                ağ yönetimi, güvenlik ve compliance ihtiyaçlarınızı karşılayın.
+              </p>
+            </motion.div>
+
+            <div className="space-y-16">
               {issProducts.map((product, index) => (
                 <motion.div
                   key={product.id}
@@ -248,44 +284,44 @@ export default function ISSProductsPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.6 }}
-                  className={`grid md:grid-cols-2 gap-12 items-center ${
-                    index % 2 === 1 ? 'md:flex-row-reverse' : ''
+                  className={`grid lg:grid-cols-2 gap-12 items-center ${
+                    index % 2 === 1 ? 'lg:flex-row-reverse' : ''
                   }`}
                 >
-                  <div className={index % 2 === 1 ? 'md:order-2' : ''}>
+                  <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-r from-teal-500 to-green-600 rounded-xl flex items-center justify-center">
+                      <div className={`w-16 h-16 bg-gradient-to-r from-${product.color}-500 to-${product.color}-600 rounded-xl flex items-center justify-center`}>
                         <product.icon className="w-8 h-8 text-white" />
                       </div>
-                      <h2 className="text-3xl font-bold">{product.title}</h2>
+                      <div>
+                        <h3 className="text-3xl font-bold">{product.title}</h3>
+                        <p className="text-lg text-gray-600">{product.subtitle}</p>
+                      </div>
                     </div>
                     
                     <p className="text-xl text-gray-600 mb-8">{product.description}</p>
                     
-                    <div className="mb-8">
-                      <h3 className="text-xl font-semibold mb-4">Temel Özellikler</h3>
-                      <div className="space-y-3">
-                        {product.features.map((feature, idx) => (
-                          <motion.div
-                            key={idx}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.4, delay: idx * 0.1 }}
-                            className="flex items-center gap-3"
-                          >
-                            <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-700">{feature}</span>
-                          </motion.div>
-                        ))}
-                      </div>
+                    <div className="grid grid-cols-2 gap-4 mb-8">
+                      {product.features.map((feature, idx) => (
+                        <motion.div
+                          key={idx}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.4, delay: idx * 0.1 }}
+                          className="flex items-center gap-3"
+                        >
+                          <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
+                          <span className="text-gray-700">{feature}</span>
+                        </motion.div>
+                      ))}
                     </div>
                     
-                    <Link href={`/urunler/internet-servis-saglayicilari/${product.id}`}>
+                    <Link href={product.href}>
                       <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="flex items-center gap-2 text-teal-600 font-semibold hover:gap-4 transition-all"
+                        className={`flex items-center gap-2 text-${product.color}-600 font-semibold hover:gap-4 transition-all`}
                       >
                         Ürün Detayları
                         <ArrowRight className="w-5 h-5" />
@@ -293,19 +329,19 @@ export default function ISSProductsPage() {
                     </Link>
                   </div>
                   
-                  <div className={`glass-effect rounded-2xl p-8 ${index % 2 === 1 ? 'md:order-1' : ''}`}>
-                    <h3 className="text-xl font-semibold mb-6">İşletme Faydaları</h3>
-                    <div className="space-y-4">
-                      {product.benefits.map((benefit, idx) => (
-                        <motion.div
-                          key={idx}
-                          whileHover={{ x: 10 }}
-                          className="flex items-center gap-3 p-4 bg-gradient-to-r from-teal-50 to-transparent rounded-lg"
-                        >
-                          <Zap className="w-6 h-6 text-yellow-500 flex-shrink-0" />
-                          <span className="font-medium text-gray-800">{benefit}</span>
-                        </motion.div>
+                  <div className={`glass-effect rounded-2xl p-8 ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                    <h4 className="text-xl font-semibold mb-6 text-center">Performans Metrikleri</h4>
+                    <div className="grid grid-cols-3 gap-4">
+                      {product.metrics.map((metric, idx) => (
+                        <div key={idx} className="text-center">
+                          <div className="text-2xl font-bold text-gray-800">{metric.value}</div>
+                          <div className="text-sm text-gray-600">{metric.label}</div>
+                        </div>
                       ))}
+                    </div>
+                    
+                    <div className="mt-8 aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center">
+                      <product.icon className={`w-24 h-24 text-${product.color}-600`} />
                     </div>
                   </div>
                 </motion.div>

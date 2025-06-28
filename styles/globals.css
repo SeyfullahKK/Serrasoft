@@ -9,7 +9,7 @@
   }
   
   body {
-    @apply bg-gray-50 text-gray-900;
+    @apply bg-white text-gray-900;
   }
 }
 
@@ -24,5 +24,11 @@
   
   .hover-scale {
     @apply transition-transform duration-300 hover:scale-105;
+  }
+
+  /* Navbar nested dropdown styles */
+  .dropdown-item:hover .nested-dropdown {
+    opacity: 1 !important;
+    visibility: visible !important;
   }
 } 
