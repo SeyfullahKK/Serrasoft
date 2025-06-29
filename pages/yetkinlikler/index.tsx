@@ -212,49 +212,169 @@ const YetkinliklerPage = () => {
           </div>
           
           <div className="container mx-auto px-6 relative">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="max-w-4xl"
-            >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
-                  <Zap className="w-6 h-6 text-white" />
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Sol Taraf - İçerik */}
+              <motion.div 
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8 }}
+                className="max-w-2xl"
+              >
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                    <Zap className="w-6 h-6 text-white" />
+                  </div>
+                  <h1 className="text-5xl font-light text-gray-800">
+                    Teknolojik Yetkinliklerimiz
+                  </h1>
                 </div>
-                <h1 className="text-5xl font-light text-gray-800">
-                  Teknolojik Yetkinliklerimiz
-                </h1>
-              </div>
-              <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mb-8">
-                Modern teknoloji alanlarında derin uzmanlık ile karmaşık sistemleri basit ve ölçeklenebilir 
-                çözümlere dönüştürüyoruz. Networking solutions'dan distributed systems'e, real-time processing'den 
-                high-performance computing'e kadar geniş bir yelpazede uzmanlaşmış ekibimizle, işletmenizin 
-                teknolojik ihtiyaçlarına en uygun çözümleri sunuyoruz.
-              </p>
-              
-              {/* Teknoloji Alanları */}
-              <div className="flex flex-wrap items-center gap-4 max-w-4xl">
-                <span className="text-sm text-gray-500 font-medium">Uzmanlık Alanlarımız:</span>
-                {[
-                  { name: 'Network Security', color: 'bg-blue-100 text-blue-700' },
-                  { name: 'Distributed Computing', color: 'bg-purple-100 text-purple-700' },
-                  { name: 'Real-time Analytics', color: 'bg-emerald-100 text-emerald-700' },
-                  { name: 'Low Latency Systems', color: 'bg-orange-100 text-orange-700' },
-                  { name: 'High Performance Computing', color: 'bg-pink-100 text-pink-700' }
-                ].map((tech, index) => (
-                  <motion.span
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4, delay: index * 0.1 }}
-                    className={`px-3 py-1.5 rounded-full text-sm font-medium ${tech.color} border border-opacity-20`}
+                <p className="text-xl text-gray-600 leading-relaxed">
+                  Modern teknoloji alanlarında derin uzmanlık ile karmaşık sistemleri basit ve ölçeklenebilir 
+                  çözümlere dönüştürüyoruz. Networking solutions'dan distributed systems'e, real-time processing'den 
+                  high-performance computing'e kadar geniş bir yelpazede uzmanlaşmış ekibimizle, işletmenizin 
+                  teknolojik ihtiyaçlarına en uygun çözümleri sunuyoruz.
+                </p>
+              </motion.div>
+
+              {/* Sağ Taraf - Animasyonlu Teknoloji Görselleştirmesi */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="relative h-96 lg:h-[500px]"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 rounded-3xl overflow-hidden">
+                  
+                  {/* Merkez Hub */}
+                  <motion.div
+                    className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg z-10"
+                    animate={{
+                      scale: [1, 1.1, 1],
+                      boxShadow: [
+                        "0 4px 20px rgba(59, 130, 246, 0.3)",
+                        "0 8px 30px rgba(147, 51, 234, 0.4)",
+                        "0 4px 20px rgba(59, 130, 246, 0.3)"
+                      ]
+                    }}
+                    transition={{ duration: 3, repeat: Infinity }}
                   >
-                    {tech.name}
-                  </motion.span>
-                ))}
-              </div>
-            </motion.div>
+                    <Cpu className="w-8 h-8 text-white" />
+                  </motion.div>
+
+                  {/* Teknoloji Düğümleri */}
+                  {[
+                    { icon: Network, x: 20, y: 20, color: 'from-blue-500 to-blue-600', delay: 0 },
+                    { icon: Database, x: 80, y: 25, color: 'from-purple-500 to-purple-600', delay: 0.5 },
+                    { icon: Activity, x: 15, y: 75, color: 'from-emerald-500 to-emerald-600', delay: 1.0 },
+                    { icon: Timer, x: 85, y: 80, color: 'from-orange-500 to-orange-600', delay: 1.5 },
+                    { icon: Cpu, x: 50, y: 10, color: 'from-pink-500 to-pink-600', delay: 2.0 }
+                  ].map((node, index) => (
+                    <motion.div
+                      key={index}
+                      className={`absolute w-12 h-12 bg-gradient-to-r ${node.color} rounded-full flex items-center justify-center shadow-md`}
+                      style={{ left: `${node.x}%`, top: `${node.y}%` }}
+                      animate={{
+                        y: [0, -15, 0],
+                        scale: [1, 1.15, 1],
+                        rotate: [0, 5, -5, 0]
+                      }}
+                      transition={{
+                        duration: 4,
+                        delay: node.delay,
+                        repeat: Infinity
+                      }}
+                    >
+                      <node.icon className="w-6 h-6 text-white" />
+                    </motion.div>
+                  ))}
+
+                  {/* Veri Akış Çizgileri */}
+                  <svg className="absolute inset-0 w-full h-full">
+                    {[
+                      { x1: "50%", y1: "50%", x2: "20%", y2: "20%" },
+                      { x1: "50%", y1: "50%", x2: "80%", y2: "25%" },
+                      { x1: "50%", y1: "50%", x2: "15%", y2: "75%" },
+                      { x1: "50%", y1: "50%", x2: "85%", y2: "80%" },
+                      { x1: "50%", y1: "50%", x2: "50%", y2: "10%" }
+                    ].map((line, index) => (
+                      <motion.line
+                        key={index}
+                        x1={line.x1}
+                        y1={line.y1}
+                        x2={line.x2}
+                        y2={line.y2}
+                        stroke="url(#techGradient)"
+                        strokeWidth="2"
+                        strokeDasharray="5,5"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ 
+                          pathLength: [0, 1, 0], 
+                          opacity: [0, 0.6, 0] 
+                        }}
+                        transition={{
+                          duration: 3,
+                          delay: index * 0.3,
+                          repeat: Infinity
+                        }}
+                      />
+                    ))}
+                    <defs>
+                      <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stopColor="#3B82F6" />
+                        <stop offset="50%" stopColor="#8B5CF6" />
+                        <stop offset="100%" stopColor="#EC4899" />
+                      </linearGradient>
+                    </defs>
+                  </svg>
+
+                  {/* Veri Parçacıkları */}
+                  {[...Array(12)].map((_, i) => (
+                    <motion.div
+                      key={i}
+                      className="absolute w-3 h-3 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"
+                      style={{
+                        left: "50%",
+                        top: "50%"
+                      }}
+                      animate={{
+                        x: [0, Math.cos(i * 30 * Math.PI / 180) * 140],
+                        y: [0, Math.sin(i * 30 * Math.PI / 180) * 140],
+                        opacity: [0, 1, 0],
+                        scale: [0, 1, 0]
+                      }}
+                      transition={{
+                        duration: 4,
+                        delay: i * 0.2,
+                        repeat: Infinity
+                      }}
+                    />
+                  ))}
+
+                  {/* Floating Code Elements */}
+                  {['API', 'SDK', 'ML', 'AI', 'IoT'].map((text, index) => (
+                    <motion.div
+                      key={text}
+                      className="absolute text-xs font-mono text-gray-400 bg-white/50 backdrop-blur-sm px-2 py-1 rounded"
+                      style={{
+                        left: `${15 + index * 15}%`,
+                        top: `${30 + (index % 2) * 30}%`
+                      }}
+                      animate={{
+                        y: [0, -10, 0],
+                        opacity: [0.3, 0.8, 0.3]
+                      }}
+                      transition={{
+                        duration: 3,
+                        delay: index * 0.4,
+                        repeat: Infinity
+                      }}
+                    >
+                      {text}
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
           </div>
         </section>
 
