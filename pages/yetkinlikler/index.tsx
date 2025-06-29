@@ -226,10 +226,34 @@ const YetkinliklerPage = () => {
                   Teknolojik Yetkinliklerimiz
                 </h1>
               </div>
-              <p className="text-xl text-gray-600 leading-relaxed max-w-3xl">
-                Modern teknoloji alanlarında derin uzmanlık ile karmaşık sistemleri 
-                basit ve ölçeklenebilir çözümlere dönüştürüyoruz.
+              <p className="text-xl text-gray-600 leading-relaxed max-w-4xl mb-8">
+                Modern teknoloji alanlarında derin uzmanlık ile karmaşık sistemleri basit ve ölçeklenebilir 
+                çözümlere dönüştürüyoruz. Networking solutions'dan distributed systems'e, real-time processing'den 
+                high-performance computing'e kadar geniş bir yelpazede uzmanlaşmış ekibimizle, işletmenizin 
+                teknolojik ihtiyaçlarına en uygun çözümleri sunuyoruz.
               </p>
+              
+              {/* Teknoloji Alanları */}
+              <div className="flex flex-wrap items-center gap-4 max-w-4xl">
+                <span className="text-sm text-gray-500 font-medium">Uzmanlık Alanlarımız:</span>
+                {[
+                  { name: 'Network Security', color: 'bg-blue-100 text-blue-700' },
+                  { name: 'Distributed Computing', color: 'bg-purple-100 text-purple-700' },
+                  { name: 'Real-time Analytics', color: 'bg-emerald-100 text-emerald-700' },
+                  { name: 'Low Latency Systems', color: 'bg-orange-100 text-orange-700' },
+                  { name: 'High Performance Computing', color: 'bg-pink-100 text-pink-700' }
+                ].map((tech, index) => (
+                  <motion.span
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: index * 0.1 }}
+                    className={`px-3 py-1.5 rounded-full text-sm font-medium ${tech.color} border border-opacity-20`}
+                  >
+                    {tech.name}
+                  </motion.span>
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>
