@@ -44,7 +44,7 @@ const Footer = () => {
           {
         title: 'Şirket',
         links: [
-          { name: 'Hakkımızda', href: '#about' },
+          { name: 'Hakkımızda', href: '/hakkimizda' },
           { name: 'İletişim', href: '#contact' },
         ],
       },
