@@ -46,7 +46,7 @@ const Hero = () => {
               className="inline-flex items-center gap-2 bg-blue-100 text-serrasoft-primary px-4 py-2 rounded-full mb-4"
             >
               <Zap className="w-4 h-4" />
-              <span className="text-sm font-medium">Geleceğin Teknolojileri</span>
+              <span className="text-sm font-medium">Serrasoft</span>
             </motion.div>
 
             <h1 className="text-5xl md:text-6xl font-bold mb-3">
@@ -58,7 +58,7 @@ const Hero = () => {
             <p className="text-xl text-gray-600 mb-4">
               Ağ güvenliği, büyük veri analizi ve derinlemesine paket inceleme alanlarında 
               uzmanlaşmış çözümlerle telekomünikasyon ve kurumsal sektörlere hizmet veriyoruz. 
-              Modern teknolojilerle işletmenizin dijital altyapısını güçlendiriyoruz.
+              5651 sayılı kanuna uyumlu modern teknolojilerle işletmenizin dijital altyapısını güçlendiriyoruz.
             </p>
 
 

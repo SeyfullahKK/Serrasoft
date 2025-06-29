@@ -136,7 +136,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-serrasoft-primary focus:border-transparent transition-all"
-                    placeholder="John Doe"
+                    placeholder="Ad Soyad"
                   />
                 </motion.div>
 
@@ -152,7 +152,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-serrasoft-primary focus:border-transparent transition-all"
-                    placeholder="john@example.com"
+                    placeholder="mail@example.com"
                   />
                 </motion.div>
 

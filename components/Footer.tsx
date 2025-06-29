@@ -1,38 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Sparkles, Github, Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react'
+import { Sparkles, Github, Linkedin, Twitter, Instagram } from 'lucide-react'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
-  const handleAddressClick = () => {
-    const confirmed = window.confirm(
-      'Google Maps\'te adresi görüntülemek için yönlendirileceksiniz. Devam etmek istiyor musunuz?'
-    )
-    if (confirmed) {
-      const address = 'Sanayi Mah. Teknopark Blv. No:1/2C/2101, 34906 Pendik/İstanbul'
-      const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`
-      window.open(mapsUrl, '_blank')
-    }
-  }
 
-  const handlePhoneClick = () => {
-    const confirmed = window.confirm(
-      'Telefon uygulaması açılacak ve numara aranacaktır. Devam etmek istiyor musunuz?'
-    )
-    if (confirmed) {
-      window.location.href = 'tel:+908508407953'
-    }
-  }
-
-  const handleEmailClick = () => {
-    const confirmed = window.confirm(
-      'E-posta uygulaması açılacak ve yeni bir mesaj oluşturulacaktır. Devam etmek istiyor musunuz?'
-    )
-    if (confirmed) {
-      window.location.href = 'mailto:info@serrasoft.com.tr'
-    }
-  }
 
   const socialLinks = [
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
@@ -57,7 +30,6 @@ const Footer = () => {
         { name: 'Telco Çözümleri', href: '/cozumler/telco' },
         { name: 'İSS Çözümleri', href: '/cozumler/internet-servis-saglayicilari' },
         { name: 'Kurumsal Çözümler', href: '/cozumler/enterprise' },
-        { name: 'Tüm Çözümler', href: '/cozumler' },
       ],
     },
     {
@@ -74,8 +46,6 @@ const Footer = () => {
         links: [
           { name: 'Hakkımızda', href: '#about' },
           { name: 'İletişim', href: '#contact' },
-          { name: 'ISO/IEC 27001:2022', href: '#' },
-          { name: 'TS EN ISO 9001:2015', href: '#' },
         ],
       },
   ]
@@ -146,37 +116,10 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="border-t border-gray-800 mt-8 pt-8"
         >
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="space-y-2">
-              <div 
-                className="flex items-center space-x-2 text-gray-400 hover:text-white cursor-pointer transition-colors"
-                onClick={handleAddressClick}
-              >
-                <MapPin className="w-4 h-4" />
-                <span className="text-sm">
-                  Sanayi Mah. Teknopark Blv. No:1/2C/2101, 34906 Pendik/İstanbul
-                </span>
-              </div>
-              <div 
-                className="flex items-center space-x-2 text-gray-400 hover:text-white cursor-pointer transition-colors"
-                onClick={handlePhoneClick}
-              >
-                <Phone className="w-4 h-4" />
-                <span className="text-sm">0 (850) 840 7953</span>
-              </div>
-              <div 
-                className="flex items-center space-x-2 text-gray-400 hover:text-white cursor-pointer transition-colors"
-                onClick={handleEmailClick}
-              >
-                <Mail className="w-4 h-4" />
-                <span className="text-sm">info@serrasoft.com.tr</span>
-              </div>
-            </div>
-            <div className="text-center md:text-right">
-              <p className="text-gray-400 text-sm">
-                © {currentYear} Serrasoft Yazılım Limited Şirketi. Tüm hakları saklıdır.
-              </p>
-            </div>
+          <div className="text-center">
+            <p className="text-gray-400 text-sm">
+              © {currentYear} Serrasoft Yazılım Limited Şirketi. Tüm hakları saklıdır.
+            </p>
           </div>
         </motion.div>
       </div>

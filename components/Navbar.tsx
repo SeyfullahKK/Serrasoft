@@ -59,7 +59,7 @@ const Navbar = () => {
     { name: 'Çözümler', href: '/cozumler' },
     { name: 'Ürünler', href: '/urunler' },
     { name: 'Yetkinlikler', href: '/yetkinlikler' },
-    { name: 'Hakkımızda', href: '/#about' },
+    { name: 'Hakkımızda', href: '/hakkimizda' },
     { name: 'İletişim', href: '/#contact' },
   ]
 
