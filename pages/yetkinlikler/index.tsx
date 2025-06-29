@@ -9,8 +9,6 @@ import {
   Cpu,
   Timer,
   ArrowRight,
-  TrendingUp,
-  Shield,
   Home,
   ChevronRight,
   CheckCircle,
@@ -232,28 +230,6 @@ const YetkinliklerPage = () => {
                 Modern teknoloji alanlarında derin uzmanlık ile karmaşık sistemleri 
                 basit ve ölçeklenebilir çözümlere dönüştürüyoruz.
               </p>
-              
-              {/* Quick Stats */}
-              <div className="flex flex-wrap gap-8 mt-10">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                    <TrendingUp className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-semibold text-gray-800">5+</div>
-                    <div className="text-sm text-gray-600">Teknoloji Alanı</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <div className="text-2xl font-semibold text-gray-800">15+</div>
-                    <div className="text-sm text-gray-600">Yıl Deneyim</div>
-                  </div>
-                </div>
-              </div>
             </motion.div>
           </div>
         </section>
