@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Sparkles, Github, Linkedin, Twitter, Instagram } from 'lucide-react'
 
@@ -96,12 +97,20 @@ const Footer = () => {
               <ul className="space-y-2">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
-                    <a
-                      href={link.href}
-                      className="text-gray-400 hover:text-white transition-colors"
-                    >
-                      {link.name}
-                    </a>
+                    {link.href.startsWith('#') ? (
+                      <a
+                        href={link.href}
+                        className="text-gray-400 hover:text-white transition-colors"
+                      >
+                        {link.name}
+                      </a>
+                    ) : (
+                      <Link href={link.href}>
+                        <span className="text-gray-400 hover:text-white transition-colors cursor-pointer">
+                          {link.name}
+                        </span>
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
