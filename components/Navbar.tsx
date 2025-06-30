@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sparkles, User, Building, MessageSquare, Mail, Phone, Send } from 'lucide-react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 interface NavItem {
   name: string;
@@ -9,6 +10,7 @@ interface NavItem {
 }
 
 const Navbar = () => {
+  const router = useRouter()
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [showContactModal, setShowContactModal] = useState(false)
@@ -29,6 +31,12 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Ürünler sayfalarında olup olmadığını kontrol et
+  const isProductPage = router.pathname.startsWith('/urunler')
+  
+  // Ürünler sayfasında ve scroll en üstteyken beyaz yazı kullan
+  const useWhiteText = isProductPage && !scrolled
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
@@ -79,8 +87,8 @@ const Navbar = () => {
                 className="flex items-center space-x-2 cursor-pointer"
                 whileHover={{ scale: 1.05 }}
               >
-                <Sparkles className="w-8 h-8 text-serrasoft-primary" />
-                <span className="text-2xl font-bold gradient-text">Serrasoft</span>
+                <Sparkles className={`w-8 h-8 ${useWhiteText ? 'text-white' : 'text-serrasoft-primary'}`} />
+                <span className={`text-2xl font-bold ${useWhiteText ? 'text-white' : 'gradient-text'}`}>Serrasoft</span>
               </motion.div>
             </Link>
 
@@ -89,7 +97,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <Link key={item.name} href={item.href}>
                   <motion.div
-                    className="text-gray-700 hover:text-serrasoft-primary transition-colors font-medium py-2 cursor-pointer"
+                    className={`${useWhiteText ? 'text-white hover:text-gray-200' : 'text-gray-700 hover:text-serrasoft-primary'} transition-colors font-medium py-2 cursor-pointer`}
                     whileHover={{ scale: 1.05 }}
                   >
                     {item.name}
@@ -109,7 +117,10 @@ const Navbar = () => {
             {/* Mobile Menu Button */}
             <div className="lg:hidden">
               <button onClick={() => setIsOpen(!isOpen)}>
-                {isOpen ? <X size={24} /> : <Menu size={24} />}
+                {isOpen ? 
+                  <X size={24} className={useWhiteText ? 'text-white' : 'text-gray-700'} /> : 
+                  <Menu size={24} className={useWhiteText ? 'text-white' : 'text-gray-700'} />
+                }
               </button>
             </div>
           </div>

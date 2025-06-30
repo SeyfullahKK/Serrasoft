@@ -346,7 +346,7 @@ export default function UrunlerPage() {
                       }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
-                      <product.icon className="w-7 h-7 text-white" />
+                      <product.icon className="w-7 h-7 text-white stroke-white" strokeWidth={2} />
                     </motion.div>
                     <div className="text-center flex-1 flex flex-col">
                       <h3 className="text-lg font-bold text-white mb-2">{product.title}</h3>
@@ -427,7 +427,7 @@ export default function UrunlerPage() {
                         >
                           <div className="flex items-start gap-3">
                             <div className={`w-10 h-10 rounded-lg bg-gradient-to-r ${category.color} bg-opacity-10 flex items-center justify-center flex-shrink-0`}>
-                              <highlight.icon className="w-5 h-5 text-gray-700" />
+                              <highlight.icon className="w-5 h-5 text-white stroke-white" strokeWidth={2} />
                             </div>
                                                          <div className="flex-1">
                                <h5 className="font-bold text-gray-900 mb-1 text-base">{highlight.name}</h5>

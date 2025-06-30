@@ -87,7 +87,7 @@ export default function TelcoSolutionsPage() {
 
       <main className="min-h-screen pt-20">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-blue-900 to-blue-700 text-white">
+        <section className="py-20 bg-gradient-to-br from-blue-700 to-blue-800 text-white">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -149,7 +149,7 @@ export default function TelcoSolutionsPage() {
                       whileTap={{ scale: 0.98 }}
                       className="block glass-effect rounded-xl p-6 text-center hover:shadow-xl transition-all cursor-pointer group"
                     >
-                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-500 to-blue-700 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-r from-blue-600 to-blue-800 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                         <solution.icon className="w-8 h-8 text-white" />
                       </div>
                       <p className="text-lg font-semibold text-gray-800 group-hover:text-serrasoft-primary transition-colors">
@@ -245,7 +245,7 @@ export default function TelcoSolutionsPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800">
+        <section className="py-20 bg-gradient-to-r from-blue-700 to-blue-800">
           <div className="container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}

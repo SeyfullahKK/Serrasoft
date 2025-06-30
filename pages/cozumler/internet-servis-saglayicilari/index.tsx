@@ -141,7 +141,7 @@ export default function ISSPage() {
 
       <main className="min-h-screen pt-20">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-purple-900 to-indigo-800 text-white">
+        <section className="py-20 bg-gradient-to-br from-blue-400 to-blue-500 text-white">
           <div className="container mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -151,7 +151,7 @@ export default function ISSPage() {
             >
               <Link href="/cozumler">
                 <motion.span 
-                  className="text-purple-200 hover:text-white transition-colors cursor-pointer inline-flex items-center gap-2 mb-4"
+                  className="text-blue-200 hover:text-white transition-colors cursor-pointer inline-flex items-center gap-2 mb-4"
                   whileHover={{ x: -5 }}
                 >
                   ← Çözümlere Dön
@@ -161,7 +161,7 @@ export default function ISSPage() {
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
                 İnternet Servis Sağlayıcıları
               </h1>
-              <p className="text-xl text-purple-100 mb-8">
+                              <p className="text-xl text-blue-100 mb-8">
                 ISS'ler için özel tasarlanmış ZeroNet serisi ürünler ile ağ trafiğinizi 
                 optimize edin, güvenliği artırın ve müşterilerinize daha iyi hizmet sunun.
               </p>
@@ -171,7 +171,7 @@ export default function ISSPage() {
                   href="#iss-solutions"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-white text-purple-700 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all cursor-pointer"
+                  className="bg-white text-blue-700 px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all cursor-pointer"
                 >
                   Keşfet
                 </motion.a>
@@ -203,8 +203,8 @@ export default function ISSPage() {
                       whileTap={{ scale: 0.95 }}
                       className="block glass-effect rounded-xl p-4 text-center hover:shadow-lg transition-all cursor-pointer group"
                     >
-                      <solution.icon className="w-8 h-8 mx-auto mb-2 text-purple-600 group-hover:scale-110 transition-transform" />
-                      <p className="text-sm font-medium text-gray-700 group-hover:text-purple-600 transition-colors">
+                      <solution.icon className="w-8 h-8 mx-auto mb-2 text-blue-500 group-hover:scale-110 transition-transform" />
+                      <p className="text-sm font-medium text-gray-700 group-hover:text-blue-500 transition-colors">
                         {solution.name}
                       </p>
                     </motion.a>
@@ -259,7 +259,7 @@ export default function ISSPage() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   className="text-center"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-500 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <challenge.icon className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{challenge.title}</h3>
@@ -287,7 +287,7 @@ export default function ISSPage() {
                 >
                   <div className={index % 2 === 1 ? 'md:order-2' : ''}>
                     <div id={solution.id} className="flex items-center gap-4 mb-6" style={{ scrollMarginTop: '100px' }}>
-                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-indigo-600 rounded-xl flex items-center justify-center">
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-500 rounded-xl flex items-center justify-center">
                         <solution.icon className="w-8 h-8 text-white" />
                       </div>
                       <h2 className="text-3xl font-bold">{solution.title}</h2>
@@ -322,7 +322,7 @@ export default function ISSPage() {
                         <motion.div
                           key={idx}
                           whileHover={{ x: 10 }}
-                          className="flex items-center gap-3 p-4 bg-gradient-to-r from-purple-50 to-transparent rounded-lg"
+                          className="flex items-center gap-3 p-4 bg-gradient-to-r from-blue-50 to-transparent rounded-lg"
                         >
                           <Zap className="w-6 h-6 text-yellow-500 flex-shrink-0" />
                           <span className="font-medium text-gray-800">{benefit}</span>
@@ -337,7 +337,7 @@ export default function ISSPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-r from-purple-600 to-indigo-800">
+        <section className="py-20 bg-gradient-to-r from-blue-400 to-blue-500">
           <div className="container mx-auto px-6 text-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}

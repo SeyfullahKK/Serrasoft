@@ -10,7 +10,7 @@ const solutions = [
     title: 'Telco Çözümleri',
     description: 'Telekomünikasyon sektörüne özel geliştirilmiş, yüksek performanslı ve ölçeklenebilir çözümler',
     icon: Server,
-    color: 'from-blue-500 to-blue-700',
+    color: 'from-blue-600 to-blue-800',
     features: [
       'Korelasyon',
       'Loglama',
@@ -24,7 +24,7 @@ const solutions = [
     title: 'İnternet Servis Sağlayıcıları',
     description: 'İSS\'ler için özel tasarlanmış, yüksek trafikli ağları yönetebilen güçlü çözümler',
     icon: Globe,
-    color: 'from-purple-500 to-purple-700',
+    color: 'from-blue-400 to-blue-500',
     features: [
       'Akıllı Trafik Kayıt Sistemi',
       'Gelişmiş VPN Koruma Sistemi',
@@ -40,7 +40,7 @@ const solutions = [
     title: 'Enterprise Çözümler',
     description: 'Kurumsal işletmeler için uçtan uca dijital dönüşüm ve teknoloji çözümleri',
     icon: Building2,
-    color: 'from-green-500 to-green-700',
+    color: 'from-indigo-800 to-indigo-900',
     features: [
       'Size uygun çözümler için iletişime geçin!',
     ],

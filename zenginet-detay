@@ -1,0 +1,108 @@
+ZengiNet Deep Packet
+Inspection (DPI)
+preencoded.png
+Ağ trafiği analizinde derin
+paket inceleme, günümüz
+ağ güvenliği altyapılarında
+temel bir rol oynar. DPI ile
+protokol, uygulama ve veri
+tabanlı kontroller
+gerçekleştirilir.
+preencoded.png
+DPI’nın Temel Tanımı ve Çalışma
+Prensibi
+Paket Yakalama
+Ağdaki veri paketlerini yakalar.
+İçerik Analizi
+Hem başlık hem de veri kısmını inceler.
+Karar Mekanizması
+Uyarı, engelleme, yönlendirme, loglama yeteneği sağlar.
+preencoded.png
+Protokol Bazlı Loglama Yapısı
+TCP/UDP Loglama
+Hedef IP adresi, port numarası ve oturum süresi gibi temel bağlantı
+bilgileri detaylıca loglanır.
+HTTP/HTTPS Loglama
+Erişilen URL adresi, kullanılan HTTP metodu, kullanıcı aracısı (user-agent)
+ve sunucu yanıt kodu günlüklenir.
+DNS Loglama
+Sorgulanan alan adı (domain), sorgu tipi ve yanıt alınan hedef IP adresi
+bilgileri loglanır.
+ICMP ve FTP Loglama
+ICMP trafiği için paket tipi, kod ve kaynak/hedef IP; FTP için kullanıcı
+bilgisi, komutlar ve dosya transfer detayları loglanır.
+preencoded.png
+Uygulama Tanıma ile Trafik
+Kategorizasyonu
+ZengiNet DPI, ağ trafiğini uygulama verilerine göre kategorize etme
+yeteneğine sahiptir. Bu sayede, hangi uygulamaların kullanıldığı,
+hangi hizmetlerin çalıştığı ve veri akışının hangi uygulamalar veya
+domainler üzerinden gerçekleştiği detaylı bir şekilde analiz edilebilir.
+ZengiNet, 400'ün üzerinde uygulama tanıma kapasitesine sahip olup,
+ağ trafiğini doğru ve kapsamlı bir şekilde sınıflandırabilir. Bu özellik, ağ
+yöneticilerine uygulama kullanımı, performansı, potansiyel riskler ve
+erişilen web siteleri hakkında değerli içgörüler sunar.
+preencoded.png
+Çeşitli Engelleme Yöntemleri
+IP ve Ağ Bazlı Engelleme
+Belirli IP adreslerinden veya ağ
+aralıklarından gelen/giden trafiği
+kısıtlayarak yetkisiz erişimi
+engeller.
+Port Bazlı Engelleme
+Tanımlanmış portlar üzerinden
+yapılan iletişimleri kontrol eder
+veya tamamen engeller.
+URL ve Alan Adı Engelleme
+İstenmeyen web sitelerine, belirli
+URL'lere veya alan adlarına erişimi
+önler, daha önce listelenen URL
+filtreleme yeteneklerini de kapsar.
+Protokol Bazlı Engelleme
+Belirli ağ protokollerinin (örn. HTTP, FTP, P2P, SMTP)
+kullanımını kısıtlayarak güvenlik politikalarını uygular.
+Uygulama Bazlı Engelleme
+Tanımlanmış uygulamaların (örn. sosyal medya,
+mesajlaşma, oyunlar) ağ üzerindeki kullanımını yönetir
+veya engeller.
+preencoded.png
+Engelleme Modülü ve Yönetimi
+Engelleme modülü, tanımlanan politika ve kurallar ile sağlanmaktadır. Bu politikaların ve kuralların yönetimi, hem grafik
+kullanıcı arayüzü (GUI) üzerinden hem de web servisleri aracılığıyla gerçekleştirilebilmektedir.
+preencoded.png
+DNS ve HTTP İstek Yönlendirme
+HTTP Yönlendirmeleri
+Web sunucusu seviyesinde URL'leri
+başka bir adrese yönlendirir (301,
+302, 307).
+DNS Tabanlı Yönlendirme
+Alan adlarını belirli IP adreslerine
+yönlendirir, trafik akışını temel
+seviyede kontrol eder.
+Yönlendirme Yönetimi ve
+Güvenliği
+Yönlendirmelerin doğru
+yapılandırılması ve güvenlik açıkları
+için izlenmesi esastır.
+preencoded.png
+Mod Seçenekleri: Inline ve Capture
+Inline Mod
+Ağ trafiği gerçek zamanlı olarak doğrudan cihaz
+üzerinden analiz edilir ve işlenir. Bu mod, düşük gecikme
+süresi gerektiren ve anında müdahale edilmesi gereken
+durumlar için idealdir. Örneğin, belirli bir protokolü veya
+uygulamayı anında engelleme yeteneği sunar.
+Capture Mod
+Ağ trafiği bir kopyası alınarak cihazın bir arayüzüne
+yönlendirilir ve daha sonra analiz edilir. Bu mod, ağ
+performansını etkilemeden detaylı trafik analizi ve uzun
+süreli izleme için kullanılır. Elde edilen veriler, sonradan
+incelenmek üzere loglanır ve raporlanır.
+preencoded.png
+İletişim
+Sanayi Mah. Teknopark Blv.
+No:1/2C/2101, 34906 Pendik/İstanbul,
+Türkiye
+0 (850) 840 7953
+info@serrasoft.com.tr
+preencoded.png

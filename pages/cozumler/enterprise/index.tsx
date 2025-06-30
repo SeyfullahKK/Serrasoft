@@ -83,14 +83,14 @@ export default function EnterprisePage() {
 
       <main className="min-h-screen pt-20">
         {/* Hero Section */}
-        <section className="py-24 bg-gradient-to-br from-blue-50 via-white to-purple-50 relative overflow-hidden">
+        <section className="py-24 bg-gradient-to-br from-indigo-50 via-white to-indigo-100 relative overflow-hidden">
           {/* Animated Background Elements */}
           <div className="absolute inset-0">
             {/* Floating Network Nodes */}
             {[...Array(8)].map((_, i) => (
               <motion.div
                 key={i}
-                className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-20"
+                className="absolute w-2 h-2 bg-indigo-400 rounded-full opacity-20"
                 style={{
                   left: `${10 + (i * 12)}%`,
                   top: `${20 + (i % 3) * 25}%`
@@ -116,7 +116,7 @@ export default function EnterprisePage() {
                   y1={`${30 + (i % 2) * 20}%`}
                   x2={`${25 + (i * 15)}%`}
                   y2={`${50 + (i % 3) * 15}%`}
-                  stroke="#3B82F6"
+                  stroke="#4F46E5"
                   strokeWidth="1"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
@@ -131,8 +131,8 @@ export default function EnterprisePage() {
             </svg>
             
             {/* Gradient Orbs */}
-            <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full opacity-10 blur-xl" />
-            <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-10 blur-xl" />
+            <div className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-r from-indigo-400 to-indigo-600 rounded-full opacity-10 blur-xl" />
+            <div className="absolute bottom-20 left-20 w-24 h-24 bg-gradient-to-r from-indigo-600 to-indigo-800 rounded-full opacity-10 blur-xl" />
           </div>
 
           <div className="container mx-auto px-6 relative z-10">
@@ -164,7 +164,7 @@ export default function EnterprisePage() {
                   >
                     Enterprise
                     <motion.span 
-                      className="block font-medium text-blue-600"
+                      className="block font-medium text-indigo-700"
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ duration: 0.8, delay: 0.4 }}
@@ -194,8 +194,8 @@ export default function EnterprisePage() {
                   >
                     {[
                       { icon: Shield, label: '5651 Kanun Uyumu', color: 'text-green-600' },
-                      { icon: Cpu, label: 'High Performance', color: 'text-blue-600' },
-                      { icon: Activity, label: 'Low Latency', color: 'text-purple-600' }
+                      { icon: Cpu, label: 'High Performance', color: 'text-indigo-600' },
+                      { icon: Activity, label: 'Low Latency', color: 'text-indigo-700' }
                     ].map((feature, index) => (
                       <motion.div
                         key={index}
@@ -224,7 +224,7 @@ export default function EnterprisePage() {
                           solutionsSection.scrollIntoView({ behavior: 'smooth' });
                         }
                       }}
-                      className="bg-blue-600 text-white px-8 py-4 rounded-lg font-medium hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                      className="bg-indigo-700 text-white px-8 py-4 rounded-lg font-medium hover:bg-indigo-800 transition-all duration-300 shadow-lg hover:shadow-xl"
                       whileHover={{ scale: 1.05, y: -2 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -244,13 +244,13 @@ export default function EnterprisePage() {
                   transition={{ duration: 1, delay: 0.4 }}
                 >
                                      {/* Main Container */}
-                   <div className="relative w-full h-[500px] bg-gradient-to-br from-white/60 to-blue-50/60 backdrop-blur-sm rounded-2xl border border-white/20 shadow-xl overflow-hidden">
+                   <div className="relative w-full h-[500px] bg-gradient-to-br from-white/60 to-indigo-50/60 backdrop-blur-sm rounded-2xl border border-white/20 shadow-xl overflow-hidden">
                      
                      {/* Animated Network Topology */}
                      <div className="absolute inset-0 p-12">
                                              {/* Central Hub */}
                        <motion.div
-                         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center shadow-lg"
+                         className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-indigo-700 rounded-full flex items-center justify-center shadow-lg"
                          animate={{
                            scale: [1, 1.1, 1],
                            boxShadow: ["0 4px 20px rgba(59, 130, 246, 0.3)", "0 8px 30px rgba(59, 130, 246, 0.5)", "0 4px 20px rgba(59, 130, 246, 0.3)"]
@@ -269,7 +269,7 @@ export default function EnterprisePage() {
                        ].map((node, index) => (
                          <motion.div
                            key={index}
-                           className="absolute w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200"
+                           className="absolute w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-indigo-200"
                            style={{ left: `${node.x}%`, top: `${node.y}%` }}
                            animate={{
                              y: [0, -10, 0],
@@ -281,7 +281,7 @@ export default function EnterprisePage() {
                              repeat: Infinity
                            }}
                          >
-                           <node.icon className="w-8 h-8 text-blue-600" />
+                           <node.icon className="w-8 h-8 text-indigo-700" />
                          </motion.div>
                        ))}
                       
@@ -314,8 +314,8 @@ export default function EnterprisePage() {
                          ))}
                         <defs>
                           <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" stopColor="#3B82F6" />
-                            <stop offset="100%" stopColor="#8B5CF6" />
+                            <stop offset="0%" stopColor="#4F46E5" />
+                            <stop offset="100%" stopColor="#3730A3" />
                           </linearGradient>
                         </defs>
                       </svg>
@@ -324,7 +324,7 @@ export default function EnterprisePage() {
                        {[...Array(16)].map((_, i) => (
                          <motion.div
                            key={i}
-                           className="absolute w-2 h-2 bg-blue-400 rounded-full"
+                           className="absolute w-2 h-2 bg-indigo-400 rounded-full"
                            style={{
                              left: "50%",
                              top: "50%"
@@ -370,7 +370,7 @@ export default function EnterprisePage() {
                   onClick={() => setSelectedSolution(index)}
                   className={`px-6 py-3 rounded-lg font-medium transition-all ${
                     selectedSolution === index
-                      ? 'bg-blue-600 text-white'
+                      ? 'bg-indigo-800 text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -390,9 +390,9 @@ export default function EnterprisePage() {
               <div className="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
                   <div className="flex items-center gap-4 mb-6">
-                    <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center">
+                    <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center">
                       {React.createElement(enterpriseSolutions[selectedSolution].icon, { 
-                        className: "w-8 h-8 text-blue-600" 
+                        className: "w-8 h-8 text-indigo-800" 
                       })}
                     </div>
                     <div>
@@ -418,14 +418,14 @@ export default function EnterprisePage() {
 
                   <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg">
                     <span className="text-gray-600">{enterpriseSolutions[selectedSolution].metric.label}:</span>
-                    <span className="text-2xl font-medium text-blue-600">
+                    <span className="text-2xl font-medium text-indigo-800">
                       {enterpriseSolutions[selectedSolution].metric.value}
                     </span>
                   </div>
                 </div>
                 
                                  <div className="relative">
-                   <div className="aspect-square bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-8">
+                   <div className="aspect-square bg-gradient-to-br from-indigo-50 to-gray-50 rounded-2xl p-8">
                      {/* Dynamic visualization based on selected solution */}
                      {selectedSolution === 0 && (
                        // 5651 Law Compliance Visualization
@@ -637,10 +637,10 @@ export default function EnterprisePage() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   className="text-center"
                 >
-                  <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
-                    <phase.icon className="w-8 h-8 text-blue-600" />
+                  <div className="w-16 h-16 bg-indigo-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                    <phase.icon className="w-8 h-8 text-indigo-700" />
                   </div>
-                  <div className="text-sm text-blue-600 font-medium mb-2">{phase.step}</div>
+                  <div className="text-sm text-indigo-600 font-medium mb-2">{phase.step}</div>
                   <h3 className="text-xl font-medium text-gray-900 mb-2">{phase.title}</h3>
                   <p className="text-gray-600">{phase.desc}</p>
                 </motion.div>

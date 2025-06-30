@@ -18,7 +18,7 @@ const solutions = [
     title: 'Telco Çözümleri',
     description: 'Telekomünikasyon sektörüne özel geliştirilmiş yüksek performanslı çözümler',
     icon: Server,
-    color: 'from-blue-500 to-blue-700',
+    color: 'from-blue-600 to-blue-800',
     bgGradient: 'from-blue-50 to-blue-100',
     features: [
       'Korelasyon',
@@ -33,8 +33,8 @@ const solutions = [
     title: 'İSS',
     description: 'İSS\'ler için özel tasarlanmış, yüksek trafikli ağları yönetebilen güçlü çözümler',
     icon: Globe,
-    color: 'from-purple-500 to-purple-700',
-    bgGradient: 'from-purple-50 to-purple-100',
+    color: 'from-blue-400 to-blue-500',
+    bgGradient: 'from-blue-50 to-blue-100',
     features: [
       'Akıllı Trafik Kayıt',
       'Gelişmiş VPN Koruma',
@@ -48,8 +48,8 @@ const solutions = [
     title: 'Enterprise Çözümler',
     description: 'Kurumsal işletmeler için uçtan uca dijital dönüşüm ve teknoloji çözümleri',
     icon: Building2,
-    color: 'from-green-500 to-green-700',
-    bgGradient: 'from-green-50 to-green-100',
+    color: 'from-indigo-800 to-indigo-900',
+    bgGradient: 'from-indigo-50 to-indigo-100',
     features: [
       'High Performance Computing',
       'Low Latency Systems',
